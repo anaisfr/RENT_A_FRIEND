@@ -7,7 +7,7 @@ class Friend < ApplicationRecord
   validates :first_name, presence: true, format: { with: '/\A[a-zA-Z]+\z/', message: "only allow messages" }
   validates :last_name, presence: true, format: { with: '/\A[a-zA-Z]+\z/', message: "only allow messages" }
   validates :age, presence: true, format: { with: '/^[0-9]*$/', message: "only allow digits" }
-  validates :gender, presence: true, inclusion: { in: GENDER}
+  validates :gender, presence: true, inclusion: { in: Friend::GENDER }
   validates :city, presence: true, format: { with: '/\A[a-zA-Z]+\z/', message: "only allow messages" }
   validates :price, presence: true, format: { with: '^[0-9]*$', message: "only allow digits" }
 end

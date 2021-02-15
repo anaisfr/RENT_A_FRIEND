@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_15_152410) do
+ActiveRecord::Schema.define(version: 2021_02_15_165929) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,7 +35,6 @@ ActiveRecord::Schema.define(version: 2021_02_15_152410) do
     t.string "city"
     t.bigint "user_id", null: false
     t.integer "price"
-    t.text "friend_avatar"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_friends_on_user_id"

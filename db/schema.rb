@@ -56,7 +56,6 @@ ActiveRecord::Schema.define(version: 2021_02_15_170520) do
     t.string "city"
     t.bigint "user_id", null: false
     t.integer "price"
-    t.text "friend_avatar"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_friends_on_user_id"

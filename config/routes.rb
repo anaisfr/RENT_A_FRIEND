@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :friends, only: [:index, :show, :new, :create, :edit, :update] do
-    ressources :bookings, only: [:new, :create] do 
+    resources :bookings, only: [:new, :create] do 
       member do 
         patch 'accepted'
         patch 'denied'

@@ -3,8 +3,8 @@
 <ul>
   <%@friends.each do |friend| %>
     <li>
-
-      <%= friend.first_name  %>
+      <% name = "#{friend.first_name} #{friend.last_name}" %>
+      <%= link_to "#{name}" , friend_path(friend)  %>
       <%= friend.age  %>
       <%= friend.city  %>
       <%= friend.gender  %>

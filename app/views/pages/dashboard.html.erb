@@ -7,8 +7,8 @@
   <% pending_bookings = @bookings.where(status: "pending")  %>
   <% pending_bookings.each do |booking|  %>
     <li>
-         <%= booking.friend.first_name  %>
-         <%= booking.friend.last_name  %>
+         <% name = "#{booking.friend.first_name} #{booking.friend.last_name}" %>
+         <%= link_to "#{name}", friend_path(booking.friend) %>
          <%= booking.friend.age  %>
          <%= booking.friend.gender %>
          <%= booking.friend.city %>
@@ -25,8 +25,8 @@
   <% accepted_bookings = @bookings.where(status: "accepted")  %>
   <% accepted_bookings.each do |booking|  %>
     <li>
-         <%= booking.friend.first_name  %>
-         <%= booking.friend.last_name  %>
+         <% name = "#{booking.friend.first_name} #{booking.friend.last_name}" %>
+         <%= link_to "#{name}", friend_path(booking.friend) %>
          <%= booking.friend.age  %>
          <%= booking.friend.gender %>
          <%= booking.friend.city %>
@@ -42,8 +42,8 @@
   <% denied_bookings = @bookings.where(status: "denied")  %>
   <% accepted_bookings.each do |booking|  %>
     <li>
-         <%= booking.friend.first_name  %>
-         <%= booking.friend.last_name  %>
+         <% name = "#{booking.friend.first_name} #{booking.friend.last_name}" %>
+         <%= link_to "#{name}", friend_path(booking.friend) %>
          <%= booking.friend.age  %>
          <%= booking.friend.gender %>
          <%= booking.friend.city %>

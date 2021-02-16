@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :friends, only: [:index, :show, :new, :create, :edit, :update] do
-    resources :bookings, only: [:new, :create] do 
-      member do 
+    resources :bookings, only: [:index, :new, :create] do
+      member do
         patch 'accepted'
         patch 'denied'
       end

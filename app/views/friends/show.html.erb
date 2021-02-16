@@ -2,7 +2,13 @@
 
 <h1> Profil de <%= name  %> </h1>
 
+<h2> Description : <%=  @friend.description %> $<h2>
 <h2> Age : <%=  @friend.age %><h2>
 <h2> City : <%=  @friend.city %><h2>
 <h2> Gender : <%=  @friend.gender %><h2>
 <h2> Price : <%=  @friend.price %> $<h2>
+
+<%= link_to "Book this friend", new_friend_booking_path(@friend) %>
+<%= link_to "Back to all the friends", friends_path %>
+
+

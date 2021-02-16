@@ -1,5 +1,8 @@
 class BookingsController < ApplicationController
-  # before_action :set_friend_user_for_booking, only: [:new, :create]
+
+  def index
+    @bookings = Booking.all
+  end
 
   def new
     @booking = Booking.new
@@ -17,12 +20,19 @@ class BookingsController < ApplicationController
     redirect_to root_path
   end
 
-  private
+  def accepted
+    @booking = Booking.find(params[:id])
+    @booking.update(status: "accepted")
+    redirect_to dashboard_path
+  end
 
-  # def set_friend_user_for_booking
-  #   @booking.friend = Friend.find(params[:friend_id])
-  #   @booking.user = current_user
-  # end
+  def denied
+    @booking = Booking.find(params[:id])
+    @booking.update(status: "denied")
+    redirect_to dashboard_path
+  end
+
+  private
 
   def booking_params
     params.require(:booking).permit(:start_date, :end_date)

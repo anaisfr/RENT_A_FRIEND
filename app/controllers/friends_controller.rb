@@ -7,13 +7,15 @@ class FriendsController < ApplicationController
 
   def show
 	end
-  
+
    def new
     @friend = Friend.new
+    @friend.user = current_user
   end
 
   def create
     @friend = Friend.new(friends_params)
+    @friend.user = current_user
     @friend.save
     redirect_to root_path
   end

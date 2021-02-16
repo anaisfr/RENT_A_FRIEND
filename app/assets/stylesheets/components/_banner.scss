@@ -3,21 +3,31 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 200px 0px 200px 50px
+    padding: 200px 0px 200px 50px;
+    border-radius: 20px;
 }
 
-.banner h2 {
+.banner-card {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 0 10px black;
+    padding: 50px;
+    width: 400px;
+}
+
+
+.banner-card h2 {
     font-size: 50px;
-    text-shadow: 0 0 20px black;
+    text-shadow: 0 0 10px black;
 }
 
-.hero-button {
+.banner-card .hero-button {
     background: rgba(0, 199, 0, 0.589);
     color: white;
     padding: 6px 10px;
     border-radius: 10px;
     text-decoration: none;
-    box-shadow: 0 0 20px black;
+    box-shadow: 0 0 10px black;
     &:hover {
         background: rgb(0, 199, 0);
         text-decoration: none;

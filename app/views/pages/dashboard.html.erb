@@ -1,0 +1,25 @@
+<h1>List booking current_user</h1>
+
+
+<ul>
+  <% @bookings.each do |booking|  %>
+    <li>
+         <%= booking.friend.first_name  %>
+         <%= booking.friend.last_name  %>
+         <%= booking.friend.age  %>
+         <%= booking.friend.gender %>
+         <%= booking.friend.city %>
+         <%= booking.friend.price  %>
+         <%= link_to "accept",  accepted_friend_booking_path(booking, booking.friend), method: :patch %>
+    </li>
+   <% end %>
+</ul>
+
+
+
+
+
+
+
+
+

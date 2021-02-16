@@ -22,11 +22,8 @@ class BookingsController < ApplicationController
 
   def accepted
     @booking = Booking.find(params[:id])
-    @friend = Friend.find(params[:friend_id])
-    @booking.friend = @friend
-    @booking.user = current_user
-    @booking.status = "accepted"
-    @booking.save
+    @booking.update(status: "accepted")
+    redirect_to dashboard_path
   end
 
   private

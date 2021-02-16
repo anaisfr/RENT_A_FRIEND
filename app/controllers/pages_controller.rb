@@ -4,4 +4,8 @@ class PagesController < ApplicationController
 
   def home
   end
+
+  def dashboard
+    @bookings = Booking.where(status: 'pending', user: current_user)
+  end
 end

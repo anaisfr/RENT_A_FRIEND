@@ -10,6 +10,7 @@ class Friend < ApplicationRecord
   validates :gender, presence: true, inclusion: { in: Friend::GENDER }
   validates :city, presence: true
   validates :price, presence: true
+  validates :description, presence: true
   has_one_attached :photo
 end
 

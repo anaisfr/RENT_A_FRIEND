@@ -1,7 +1,7 @@
 <h1>List de tout les amis</h1>
 
 <ul>
-  <%@friends.each do |friend| %>
+  <% @friends.each do |friend| %>
     <li>
       <%= friend.first_name  %>
       <%= friend.last_name  %>
@@ -10,7 +10,9 @@
       <%= friend.city  %>
       <%= friend.gender  %>
       <%= friend.price  %>
-
     </li>
   <% end  %>
 </ul>
+
+<%= render 'shared/friend-card' %>
+

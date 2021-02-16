@@ -2,7 +2,7 @@
 
 
 <ul>
-  <% current_user.bookings.each do |booking|  %>
+  <% @bookings.each do |booking|  %>
     <li>
          <%= booking.friend.first_name  %>
          <%= booking.friend.last_name  %>
@@ -10,11 +10,10 @@
          <%= booking.friend.gender %>
          <%= booking.friend.city %>
          <%= booking.friend.price  %>
+         <%= link_to "accept",  accepted_friend_booking_path(booking, booking.friend), method: :patch %>
     </li>
    <% end %>
 </ul>
-
-<%= link_to "accepet",  %>
 
 
 

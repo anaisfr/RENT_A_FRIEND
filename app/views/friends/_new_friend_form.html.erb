@@ -1,0 +1,10 @@
+<%= simple_form_for(friend) do |f| %>
+  <%= f.input :first_name %>
+  <%= f.input :last_name %>
+  <%= f.input :age %>
+  <%= f.input :gender, collection: Friend::GENDER %>
+  <%= f.input :city %>
+  <%= f.input :price %>
+  <%= f.input :photo, as: :file %>
+  <%= f.submit "Add my friend" %>
+<% end %>

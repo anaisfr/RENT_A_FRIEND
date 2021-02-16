@@ -7,6 +7,17 @@ class FriendsController < ApplicationController
 
   def show
 	end
+  
+   def new
+    @friend = Friend.new
+  end
+
+  def create
+    @friend = Friend.new(friends_params)
+    @friend.save
+    redirect_to root_path
+  end
+
 
 	private
 
@@ -14,4 +25,8 @@ class FriendsController < ApplicationController
     @friend = Friend.find(params[:id])
   end
 
+
+  def friends_params
+    params.require(:friend).permit(:first_name, :last_name, :age, :gender, :city, :price)
+  end
 end

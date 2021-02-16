@@ -1,11 +1,11 @@
 .banner {
-    background: url("https://images.unsplash.com/photo-1444210971048-6130cf0c46cf?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1952&q=80");
-    background-position: center;
-    background-repeat: no-repeat;
+    background: url("images/banner.jpg");
     background-size: cover;
     padding: 200px 0px 200px 50px;
     border-radius: 20px;
+    height: 450px;
 }
+
 
 .text h2 {
     border-radius: 15px;
@@ -16,15 +16,19 @@
 }
 
 .hero-button {
-    background: #2D82B7;
-    color: white;
-    padding: 6px 10px;
-    border-radius: 5px;
-    text-decoration: none;
-    box-shadow: 0 0 5px black;
-    opacity: 0.95;
-    &:hover {
-        text-decoration: none;
-        color: white;
-    }
+  background-color: #2D82B7;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  width: 164px;
+  border-radius: 5px;
+}
+
+.hero-button:hover {
+  text-decoration: none;
+  color: white;
 }

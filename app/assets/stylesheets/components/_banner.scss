@@ -7,29 +7,23 @@
     border-radius: 20px;
 }
 
-.banner-card {
-    background-color: white;
+.text h2 {
     border-radius: 15px;
-    box-shadow: 0 0 10px black;
-    padding: 50px;
-    width: 400px;
+    padding: 10px;
+    color: white;
+    font-size: 60px;
+    text-shadow: 0 0 5px black;
 }
 
-
-.banner-card h2 {
-    font-size: 50px;
-    text-shadow: 0 0 10px black;
-}
-
-.banner-card .hero-button {
-    background: rgba(0, 199, 0, 0.589);
+.hero-button {
+    background: #2D82B7;
     color: white;
     padding: 6px 10px;
-    border-radius: 10px;
+    border-radius: 5px;
     text-decoration: none;
-    box-shadow: 0 0 10px black;
+    box-shadow: 0 0 5px black;
+    opacity: 0.95;
     &:hover {
-        background: rgb(0, 199, 0);
         text-decoration: none;
         color: white;
     }

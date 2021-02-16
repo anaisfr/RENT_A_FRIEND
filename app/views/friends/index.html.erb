@@ -1,0 +1,16 @@
+<h1>List de tout les amis</h1>
+
+<ul>
+  <%@friends.each do |friend| %>
+    <li>
+      <%= friend.first_name  %>
+      <%= friend.last_name  %>
+      <%= friend.age  %>
+      <%= friend.gender  %>
+      <%= friend.city  %>
+      <%= friend.gender  %>
+      <%= friend.price  %>
+
+    </li>
+  <% end  %>
+</ul>

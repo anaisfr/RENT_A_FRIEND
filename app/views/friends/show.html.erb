@@ -1,6 +1,8 @@
-<h1> Profil de <%= @friend.first_name @friend.last_name  %> </h1>
+<% name = "#{@friend.first_name} #{@friend.last_name}" %>
 
-<h2> Age : <%=  friend.age %><h2>
-<h2> Age : <%=  friend.city %><h2>
-<h2> Age : <%=  friend.gender %><h2>
-<h2> Age : <%=  friend.price %> $<h2>
+<h1> Profil de <%= name  %> </h1>
+
+<h2> Age : <%=  @friend.age %><h2>
+<h2> City : <%=  @friend.city %><h2>
+<h2> Gender : <%=  @friend.gender %><h2>
+<h2> Price : <%=  @friend.price %> $<h2>

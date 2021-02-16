@@ -12,3 +12,9 @@ class Friend < ApplicationRecord
   validates :price, presence: true
   has_one_attached :photo
 end
+
+# , format: { with: '/\A[a-zA-Z]+\z/', message: "only allow messages" }
+# format: { with: '/\A[a-zA-Z]+\z/', message: "only allow messages" }
+# , format: { with: '/\A[a-zA-Z]+\z/', message: "only allow messages" }
+# format: { with: '/^[0-9]*$/', message: "only allow digits" }
+# , format: { with: '^[0-9]*$', message: "only allow digits" }

@@ -1,16 +1,14 @@
 <%= render 'shared/navbar' %>
 
 <div class="wrapper">
-<ul>
   <% @friends.each do |friend| %>
-    <li>
       <div class="friend-card">
         <div class="top">
-          <%= cl_image_tag friend.photo.key, height: 250, width: 200, crop: :fill %>
+          <%= cl_image_tag friend.photo.key, height: 250, width: 200, crop: :fill, class: 'pic' %>
           <div class="text">
             <h3><%= friend.first_name %></h3>
             <h3><%= friend.last_name %></h3>
-            <p><%= friend.age %></p>
+            <p><%= friend.age %> years old</p>
             <p><%= friend.city %></p>
             <div class="tags">
               <p>#juggler #actor</p>
@@ -19,16 +17,15 @@
         </div>
       <div class="bottom">
         <div class="rating-price">
-          <h2><%= friend.price %></h2>
+          <h2><%= friend.price %> $/h</h2>
           <p>🟠 🟠 🟠</p>
         </div>
         <div class="btns">
-          <a class= "btn-rent" href="#">View profile !</a>
+          <%= link_to "View profile !", friends_path(friend), class: "btn-blue" %>
         </div>
       </div>
-    </li>
+    </div>
   <% end  %>
-</ul>
 </div>
 
 <%= render 'shared/footer' %>

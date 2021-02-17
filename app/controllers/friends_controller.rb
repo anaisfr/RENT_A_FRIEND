@@ -9,7 +9,7 @@ class FriendsController < ApplicationController
   def show
 	end
 
-   def new
+  def new
     @friend = Friend.new
     @friend.user = current_user
   end

@@ -13,7 +13,7 @@
           <ul class="navbar-nav mr-auto">
             <div class="menu">
               <li class="nav-item active">
-              <%= link_to "Home", user_registration_path %>
+              <%= link_to "Home", root_path %>
               </li>
               <li class="nav-item">
               <%= link_to "Sign up", new_user_registration_path %>
@@ -25,8 +25,8 @@
             <li class="nav-item dropdown">
               <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item"><%= link_to "Dashboard", dashboard_path %></a></a>
-                <a class="dropdown-item"><%= link_to "Log out", destroy_user_session_path %></a></a>
+                <a class="dropdown-item"><%= link_to "Dashboard", dashboard_path %></a>
+                <a class="dropdown-item"><%= link_to "Log out", destroy_user_session_path(@user), method: :delete, data: { confirm: "You are logged out" } %></a>
               </div>
             </li>
           </ul>

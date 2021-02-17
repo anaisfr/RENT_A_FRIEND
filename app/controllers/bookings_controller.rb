@@ -17,7 +17,7 @@ class BookingsController < ApplicationController
     @friend = @booking.friend
     @booking.user = current_user
     @booking.save
-    redirect_to root_path
+    redirect_to dashboard_path
   end
 
   def accepted

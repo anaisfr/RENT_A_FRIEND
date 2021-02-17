@@ -1,0 +1,37 @@
+.friend-show {
+  display: flex;
+}
+
+.friend-show-description {
+  margin-left: 50px;
+}
+
+.double-buttons {
+  display: flex;
+}
+
+.fixed-footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.cst-margin-top {
+  margin-top: 100px;
+  border: solid 1px lightgray;
+  border-radius: 4px;
+  padding: 30px 35px;
+}
+
+.cst-margin-left {
+  margin-left: 15px;
+}
+
+h1 {
+  margin-bottom: 30px;
+}
+
+img {
+  border-radius: 4px;
+}

@@ -1,16 +1,37 @@
 <%= render 'shared/navbar' %>
-<div class="container">
-  <% name = "#{@friend.first_name} #{@friend.last_name}" %>
 
-  <h1> Profil de <%= name  %> </h1>
+<div class="container cst-margin-top">
+  <div class="friend-show">
+    <div class="friend-show-img">
+      <%= cl_image_tag @friend.photo.key, height: 400, width: 400, crop: :fit %>
+    </div>
+    <div class="friend-show-description">
+      <% name = "#{@friend.first_name} #{@friend.last_name}" %>
 
-  <h2> Description : <%=  @friend.description %><h2>
-  <h2> Age : <%=  @friend.age %><h2>
-  <h2> City : <%=  @friend.city %><h2>
-  <h2> Gender : <%=  @friend.gender %><h2>
-  <h2> Price : <%=  @friend.price %> $<h2>
+      <h1><%= name  %></h1>
 
-  <%= link_to "Book this friend", new_friend_booking_path(@friend), class: 'btn-blue' %>
-  <%= link_to "Back to all the friends", friends_path, class: 'btn-white' %>
+      <h3><strong>Description:</strong> <%=  @friend.description %></h3>
+
+
+      <h3><strong>Age:</strong> <%=  @friend.age %></h3>
+
+
+      <h3><strong>City:</strong> <%=  @friend.city %></h3>
+
+
+      <h3><strong>Gender:</strong> <%=  @friend.gender %></h3>
+
+      <h3><strong>Price:</strong> <%=  @friend.price %> $</h3>
+
+
+      </div>
+  </div>
+
+  <div class="double-buttons">
+    <%= link_to "Book this friend", new_friend_booking_path(@friend), class: 'btn-blue' %>
+    <%= link_to "Back to all the friends", friends_path, class: 'btn-white cst-margin-left' %>
+  </div>
 </div>
-<%= render 'shared/footer' %>
+<div class="fixed-footer">
+  <%= render 'shared/footer' %>
+</div>

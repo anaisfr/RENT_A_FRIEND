@@ -1,0 +1,18 @@
+<h2>Bookings pending</h2>
+
+
+<ul>
+  <% pending_bookings = @bookings.where(status: "pending")  %>
+  <% pending_bookings.each do |booking|  %>
+    <li>
+         <% name = "#{booking.friend.first_name} #{booking.friend.last_name}" %>
+         <%= link_to "#{name}", friend_path(booking.friend) %>
+         <%= booking.friend.age  %>
+         <%= booking.friend.gender %>
+         <%= booking.friend.city %>
+         <%= booking.friend.price  %>
+         <%= link_to "accept",  accepted_booking_path(booking), method: :patch %>
+         <%= link_to "deny",  denied_booking_path(booking), method: :patch %>
+    </li>
+   <% end %>
+</ul>

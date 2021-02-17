@@ -20,7 +20,7 @@
 										<%= date_formatter(booking.end_date)  %>
 										<%= booking.end_date.year %>
 									</p>
-                                    <%= link_to accepted_booking_path(booking), method: :patch do %>
+                                     <%= link_to accepted_booking_path(booking), method: :patch do %>
                                      <i class="fas fa-check-circle"></i>
                                      <% end %>
                                      <%= link_to denied_booking_path(booking), method: :patch do %>

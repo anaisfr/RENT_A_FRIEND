@@ -17,10 +17,10 @@ Booking.destroy_all
 puts 'Creating 5 fake users...'
 users = []
 5.times do
-file = URI.open("https://picsum.photos/200/300")
+file = URI.open("https://i.pravatar.cc/300")
   user = User.new(
-    first_name:   Faker::Name.unique.name,
-    last_name:    Faker::Name.unique.name,
+    first_name:   Faker::Name.first_name,
+    last_name:    Faker::Name.last_name,
     email: Faker::Internet.email,
     age: rand(18..53),
     gender: Friend::GENDER.sample,
@@ -34,10 +34,10 @@ end
 
 friends = []
 10.times do
-file = URI.open("https://picsum.photos/200/300")
+file = URI.open("https://i.pravatar.cc/300")
   friend = Friend.new(
-    first_name:   Faker::Name.unique.name,
-    last_name:    Faker::Name.unique.name,
+    first_name:   Faker::Name.first_name,
+    last_name:    Faker::Name.last_name,
     age: rand(18..53),
     gender: Friend::GENDER.sample,
     city: Faker::Address.city,

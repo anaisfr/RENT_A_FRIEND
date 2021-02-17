@@ -1,4 +1,6 @@
-<%= simple_form_for(friend) do |f| %>
+<div class="container-form">
+  <h2>Add a new friend</h2>
+  <%= simple_form_for(friend) do |f| %>
   <%= f.input :first_name %>
   <%= f.input :last_name %>
   <%= f.input :age %>
@@ -9,3 +11,5 @@
   <%= f.input :photo, as: :file %>
   <%= f.submit "Add my friend" %>
 <% end %>
+
+</div>

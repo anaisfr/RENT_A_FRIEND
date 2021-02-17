@@ -16,8 +16,10 @@ Booking.destroy_all
 
 puts 'Creating 5 fake users...'
 users = []
-5.times do
-file = URI.open("https://i.pravatar.cc/300")
+5.times do |index|
+  puts "Creating user n°#{index}"
+# file = URI.open("https://i.pravatar.cc/300")
+file = URI.open("https://source.unsplash.com/400x250/?person,people,portrait")
   user = User.new(
     first_name:   Faker::Name.first_name,
     last_name:    Faker::Name.last_name,
@@ -33,8 +35,9 @@ file = URI.open("https://i.pravatar.cc/300")
 end
 
 friends = []
-10.times do
-file = URI.open("https://i.pravatar.cc/300")
+10.times do |index|
+  puts "Creating friend n°#{index}"
+file = URI.open("https://source.unsplash.com/400x250/?person,people,portrait")
   friend = Friend.new(
     first_name:   Faker::Name.first_name,
     last_name:    Faker::Name.last_name,

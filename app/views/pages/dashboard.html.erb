@@ -1,5 +1,36 @@
 <%= render 'shared/navbar' %>
 
+<%  def date_formatter(date) %>
+<% if date.month == 1 %>
+<%  month = "January" %>
+<%  elsif date.month == 2 %>
+<%  month = "February" %>
+<%   elsif date.month == 3 %>
+<%  month = "March" %>
+<%   elsif date.month == 4 %>
+<%  month = "April" %>
+<% elsif date.month == 5 %>
+<%  month = "May" %>
+<%   elsif date.month == 6 %>
+<%    month = "June" %>
+<%  elsif date.month == 7 %>
+<% month = "July" %>
+<%   elsif date.month == 8 %>
+<% month = "August" %>
+<%  elsif date.month == 9 %>
+<% month = "September" %>
+<%  elsif date.month == 10%>
+<%  month = "October" %>
+<%  elsif date.month == 11 %>
+<%  month = "November"%>
+<%  elsif date.month == 12%>
+<% month = "December" %>
+<% else %>
+<% end %>
+<% end %>
+
+
+
 
 
 
@@ -16,10 +47,23 @@
 					<% pending_bookings.each do |booking|  %>
 						<li>
 							<div class="card-product">
-								<img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+								<%= cl_image_tag booking.friend.photo.key, height: 400, width: 400, crop: :fit %> 
 								<div class="card-product-infos">
-									<h2>Product name</h2>
-									<p>Product description with <strong>relevant info</strong> only.</p>
+									<h2>
+										<%= booking.friend.first_name  %>
+										<%= booking.friend.last_name  %>
+									</h2>
+									<p> Beginning :
+									  <%= booking.start_date.day %>
+									  <%= date_formatter(booking.start_date)  %>
+										<%= booking.start_date.year %>
+										End :
+										<%= booking.end_date.day %>
+										<%= date_formatter(booking.end_date)  %>
+										<%= booking.end_date.year %>
+									</p>
+									<%= link_to "accepted", accepted_booking_path(booking), method: :patch  %>
+									<%= link_to "denied", denied_booking_path(booking), method: :patch  %>
 								</div>
 							</div>
 						</li>
@@ -33,10 +77,21 @@
 					<% accepted_bookings.each do |booking|  %>
 						<li>
 							<div class="card-product">
-								<img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+								<%= cl_image_tag booking.friend.photo.key, height: 400, width: 400, crop: :fit %>
 								<div class="card-product-infos">
-									<h2>Product name</h2>
-									<p>Product description with <strong>relevant info</strong> only.</p>
+									<h2>
+										<%= booking.friend.first_name  %>
+										<%= booking.friend.last_name  %>
+									</h2>
+											<p> Beginning :
+									  <%= booking.start_date.day %>
+									  <%= date_formatter(booking.start_date)  %>
+										<%= booking.start_date.year %>
+										End :
+										<%= booking.end_date.day %>
+										<%= date_formatter(booking.end_date)  %>
+										<%= booking.end_date.year %>
+									</p>
 								</div>
 							</div>
 						</li>
@@ -50,10 +105,21 @@
 					<% denied_bookings.each do |booking|  %>
 						<li>
 							<div class="card-product">
-								<img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+								<%= cl_image_tag booking.friend.photo.key, height: 400, width: 400, crop: :fit %>
 								<div class="card-product-infos">
-									<h2>Product name</h2>
-									<p>Product description with <strong>relevant info</strong> only.</p>
+									<h2>
+										<%= booking.friend.first_name  %>
+										<%= booking.friend.last_name  %>
+									</h2>
+										<p> Beginning :
+									  <%= booking.start_date.day %>
+									  <%= date_formatter(booking.start_date)  %>
+										<%= booking.start_date.year %>
+										End :
+										<%= booking.end_date.day %>
+										<%= date_formatter(booking.end_date)  %>
+										<%= booking.end_date.year %>
+									</p>									
 								</div>
 							</div>
 						</li>

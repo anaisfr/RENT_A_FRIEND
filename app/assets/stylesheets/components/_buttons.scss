@@ -1,0 +1,27 @@
+.btn-blue {
+  background-color: #07004D;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  margin-top: 15px;
+  &:hover {
+    text-decoration: none;
+    background-color: #090156;
+    color: #efecec;
+  }
+}
+
+.btn-white {
+  background-color: #fff;
+  color: #07004D;
+  border: solid 1px #07004D;
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  margin-top: 15px;
+  &:hover {
+    text-decoration: none;
+    opacity: 0.9;
+  }
+}

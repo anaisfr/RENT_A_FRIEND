@@ -1,7 +1,7 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
       <a class="navbar-brand" href="#">
         <div class="logo">
-          <i class="fas fa-user-friends"></i>
+          <%= link_to ('<i class="fa fa-user-friends"></i>').html_safe, root_path  %>
           <h4 id='text'>Rent a Friend</h4>
         </div>
      </a>
@@ -9,18 +9,12 @@
         <span class="navbar-toggler-icon"></span>
       </button>
 
+   <% if current_user %>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <div class="menu">
-              <li class="nav-item active">
-              <%= link_to "Home", root_path %>
-              </li>
-              <li class="nav-item">
-              <%= link_to "Sign up", new_user_registration_path %>
-            </li>
-            <li class="nav-item">
-              <%= link_to "Log in", new_user_session_path %>
-            </li>
+               <li class="nav-item active">
+              <%= link_to "Find a friend", friends_path %>
             </div>
             <li class="nav-item dropdown">
               <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
@@ -30,5 +24,16 @@
               </div>
             </li>
           </ul>
-     </div>
+
+    <% else %>
+       <div class="menu">
+               <li class="nav-item active">
+              <%= link_to "Find a friend", friends_path %>
+              </li>
+              <li class="nav-item">
+              <%= link_to "Sign up", new_user_registration_path %>
+              </li>
+            </div>
+     <% end %>
+    </div>
   </div>

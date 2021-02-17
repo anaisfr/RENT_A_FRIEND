@@ -43,88 +43,20 @@
 			<div class="list-pending">
 			  <h2>Pending bookings</h2>
 				<ul>
-					<%pending_bookings = @bookings.where(status: "pending")  %>
-					<% pending_bookings.each do |booking|  %>
-						<li>
-							<div class="card-product">
-								<%= cl_image_tag booking.friend.photo.key, height: 400, width: 400, crop: :fit %> 
-								<div class="card-product-infos">
-									<h2>
-										<%= booking.friend.first_name  %>
-										<%= booking.friend.last_name  %>
-									</h2>
-									<p> Beginning :
-									  <%= booking.start_date.day %>
-									  <%= date_formatter(booking.start_date)  %>
-										<%= booking.start_date.year %>
-										End :
-										<%= booking.end_date.day %>
-										<%= date_formatter(booking.end_date)  %>
-										<%= booking.end_date.year %>
-									</p>
-									<%= link_to "accepted", accepted_booking_path(booking), method: :patch  %>
-									<%= link_to "denied", denied_booking_path(booking), method: :patch  %>
-								</div>
-							</div>
-						</li>
-					<% end %>
+				  <%= render 'shared/booking-pending' %>
 				</ul>
 			</div>
       <div class="list_accepted">
 			  <h2>Accepted bookings</h2>
 			  <ul>
-					<%accepted_bookings = @bookings.where(status: "accepted")  %>
-					<% accepted_bookings.each do |booking|  %>
-						<li>
-							<div class="card-product">
-								<%= cl_image_tag booking.friend.photo.key, height: 400, width: 400, crop: :fit %>
-								<div class="card-product-infos">
-									<h2>
-										<%= booking.friend.first_name  %>
-										<%= booking.friend.last_name  %>
-									</h2>
-											<p> Beginning :
-									  <%= booking.start_date.day %>
-									  <%= date_formatter(booking.start_date)  %>
-										<%= booking.start_date.year %>
-										End :
-										<%= booking.end_date.day %>
-										<%= date_formatter(booking.end_date)  %>
-										<%= booking.end_date.year %>
-									</p>
-								</div>
-							</div>
-						</li>
-					<% end %>
-				</ul>
+			    <%= render 'shared/booking-accepted' %>
+			  </ul>
 			</div>
 			<div class="list_denied">
 			  <h2>Denied bookings</h2>
 			  <ul>
-					<%denied_bookings = @bookings.where(status: "denied")  %>
-					<% denied_bookings.each do |booking|  %>
-						<li>
-							<div class="card-product">
-								<%= cl_image_tag booking.friend.photo.key, height: 400, width: 400, crop: :fit %>
-								<div class="card-product-infos">
-									<h2>
-										<%= booking.friend.first_name  %>
-										<%= booking.friend.last_name  %>
-									</h2>
-										<p> Beginning :
-									  <%= booking.start_date.day %>
-									  <%= date_formatter(booking.start_date)  %>
-										<%= booking.start_date.year %>
-										End :
-										<%= booking.end_date.day %>
-										<%= date_formatter(booking.end_date)  %>
-										<%= booking.end_date.year %>
-									</p>									
-								</div>
-							</div>
-						</li>
-					<% end %>
-				</ul>
+			    <%= render 'shared/booking-denied' %>
+			  </ul>
 			</div>
     </div>
   </div>

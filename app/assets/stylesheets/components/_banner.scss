@@ -1,7 +1,9 @@
 .banner {
+    display: flex;
+    align-items: center;
     background: url("banner.jpg");
     background-size: cover;
-    padding: 200px 0px 200px 50px;
+    padding: 200px 0px 200px 75px;
     border-radius: 20px;
     height: 450px;
 }
@@ -12,7 +14,6 @@
   color: white;
   font-size: 60px;
   text-shadow: 0 0 5px black;
-
 }
 
 .hero-button {

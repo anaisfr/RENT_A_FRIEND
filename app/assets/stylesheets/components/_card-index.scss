@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;400;700;900&family=Yeseva+One&display=swap');
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+h3 {
+  font-family: 'Yeseva One', cursive;
+}
+
+.card-friend {
+  box-shadow: 0 0 15px rgb(230, 230, 230);
+  border-radius: 3px;
+  position: relative;
+}
+
+.card-friend-img {
+  background-color: #2E6FA5;
+  padding: 50px 0;
+}
+
+.card-friend-avatar {
+  border: solid 5px #fff;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  position: absolute;
+  left: 70px;
+  top: 22px;
+}
+
+.card-friend-body {
+  text-align: center;
+  padding: 110px 10px 30px 10px;
+
+}
+
+.card-friend-description {
+  margin-bottom: 40px;
+  text-align: left;
+  padding: 0 50px;
+}
+
+.btn-book a {
+  background-color: #07004D;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 200;
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 3px;
+}
+
+.fas {
+  color: #07004D;
+  margin-right: 15px;
+}
+

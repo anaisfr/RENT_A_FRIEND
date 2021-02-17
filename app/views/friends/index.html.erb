@@ -2,30 +2,25 @@
 
 <div class="wrapper">
   <% @friends.each do |friend| %>
-      <div class="friend-card">
-        <div class="top">
-          <% if friend.photo.attached? %>
-          <%= cl_image_tag friend.photo.key, class: 'pic pic_index' %>
+
+    <div class="card-friend">
+      <div class="card-friend-img">
+      </div>
+      <img src="https://images.unsplash.com/photo-1573007974656-b958089e9f7b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80" alt="" class="card-friend-avatar">
+      <div class="card-friend-body">
+        <h3><%= friend.first_name %> <%= friend.last_name %></h3>
+        <div class="card-friend-description">
+          <p><i class="fas fa-map-pin"></i> <%= friend.city %></p>
+          <p><i class="fas fa-birthday-cake"></i> <%= friend.age %> years old</p>
+          <% if friend.gender == "male"%>
+          <p><i class="fas fa-mars"></i> Man</p>
           <% else %>
-          <%= %>
+          <p><i class="fas fa-venus"></i> Woman</p>
           <% end %>
-          <div class="text">
-            <h3><%= friend.first_name %></h3>
-            <h3><%= friend.last_name %></h3>
-            <p><%= friend.age %> years old</p>
-            <p><%= friend.city %></p>
-            <div class="tags">
-              <p>#juggler #actor</p>
-            </div>
-          </div>
+          <p><i class="fas fa-euro-sign"></i> <%= friend.price %></p>
         </div>
-      <div class="bottom">
-        <div class="rating-price">
-          <h2><%= friend.price %> $/h</h2>
-          <p>🟠 🟠 🟠</p>
-        </div>
-        <div class="btns">
-          <%= link_to "View profile !", friend_path(friend), class: "btn-blue" %>
+        <div class="btn-book">
+          <%= link_to "Book", friend_path(friend) %>
         </div>
       </div>
     </div>

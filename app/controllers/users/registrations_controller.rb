@@ -12,8 +12,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # POST /resource
    def create
      super
-     if @user.photo.nil?
-       @user.photo.attach(filename: 'avatar.jpg', content_type: 'image/jpg')
+     @user.photo.attach(filename: 'avatar.jpg', content_type: 'image/jpg') if @user.photo.nil?
    end
 
   # GET /resource/edit
@@ -44,7 +43,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # If you have extra params to permit, append them to the sanitizer.
    def configure_sign_up_params
-     devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute], :photo)
+     devise_parameter_sanitizer.permit(:sign_up, :photo, keys: [:attribute])
    end
 
   # If you have extra params to permit, append them to the sanitizer.

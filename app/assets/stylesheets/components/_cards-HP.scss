@@ -6,12 +6,12 @@
 }
 
 .card p {
-  opacity: .5;
+  opacity: 0.5;
 }
 
 .card {
   width: 250px;
-  border-radius: 3px;
+  border-radius: 5px;
   box-shadow: 0 0 5px rgb(230,230,230);
   text-align: center;
   padding: 20px;
@@ -22,10 +22,10 @@
 .cards {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
 .text-center {
-  padding: 25px;
+  padding: 35px;
 }
 

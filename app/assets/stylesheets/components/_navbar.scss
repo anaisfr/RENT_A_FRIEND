@@ -1,3 +1,12 @@
+.menu {
+  display:flex;
+  margin:10px;
+}
+
+.nav-item {
+  margin:10px;
+}
+
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
@@ -24,4 +33,8 @@
 #text {
   padding-left: 10px;
   padding-top: 3px;
+}
+
+.dropdown-menu {
+  text-align: center;
 }

@@ -13,8 +13,8 @@
          <%= booking.friend.gender %>
          <%= booking.friend.city %>
          <%= booking.friend.price  %>
-         <%= link_to "accept",  accepted_friend_booking_path(booking, booking.friend), method: :patch %>
-         <%= link_to "deny",  denied_friend_booking_path(booking, booking.friend), method: :patch %>
+         <%= link_to "accept",  accepted_booking_path(booking), method: :patch %>
+         <%= link_to "deny",  denied_booking_path(booking), method: :patch %>
     </li>
    <% end %>
 </ul>

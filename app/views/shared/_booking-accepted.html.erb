@@ -17,6 +17,9 @@
 										<%= date_formatter(booking.end_date)  %>
 										<%= booking.end_date.year %>
 									</p>
+                                    <%= link_to canceled_booking_path(booking), method: :patch do %>
+                                    <i class="fas fa-undo"></i>
+                                    <% end %>
 								</div>
 							</div>
 						</li>

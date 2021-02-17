@@ -34,7 +34,7 @@ class BookingsController < ApplicationController
 
   def canceled
     @booking = Booking.find(params[:id])
-    @booking.update(status: "canceled")
+    @booking.update(status: "pending")
     redirect_to dashboard_path
   end
 

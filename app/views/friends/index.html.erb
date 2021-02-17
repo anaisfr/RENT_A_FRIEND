@@ -1,10 +1,35 @@
-<h1>Liste de tous les amis</h1>
+<%= render 'shared/navbar' %>
 
+<div class="wrapper">
 <ul>
   <% @friends.each do |friend| %>
     <li>
-      <%= render 'shared/friend-card' %>
+      <div class="friend-card">
+        <div class="top">
+          <img class="pic" src="https://images.unsplash.com/photo-1520065786657-b71a007dd8a5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="">
+          <div class="text">
+            <h3><%= friend.first_name %></h3>
+            <h3><%= friend.last_name %></h3>
+            <p><%= friend.age %></p>
+            <p><%= friend.city %></p>
+            <div class="tags">
+              <p>#juggler #actor</p>
+            </div>
+          </div>
+        </div>
+      <div class="bottom">
+        <div class="rating-price">
+          <h2><%= friend.price %></h2>
+          <p>🟠 🟠 🟠</p>
+        </div>
+        <div class="btns">
+          <a class= "btn-rent" href="#">View profile !</a>
+        </div>
+      </div>
     </li>
   <% end  %>
 </ul>
+</div>
+
+<%= render 'shared/footer' %>
 

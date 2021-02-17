@@ -1,6 +1,5 @@
 <%= render 'shared/navbar' %>
 <div class="container">
-  <%= cl_image_tag @friend.photo.key, height: 400, width: 300, crop: :fill %>
   <% name = "#{@friend.first_name} #{@friend.last_name}" %>
 
   <h1> Profil de <%= name  %> </h1>

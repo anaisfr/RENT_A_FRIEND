@@ -8,5 +8,6 @@ class PagesController < ApplicationController
   def dashboard
     @bookings = Booking.where(user: current_user)
     @friends = Friend.where(user: current_user)
+    @user = current_user
   end
 end

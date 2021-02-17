@@ -1,6 +1,7 @@
 class Friend < ApplicationRecord
   belongs_to :user
   has_many :bookings, dependent: :destroy
+  has_one_attached :photo
 
   GENDER = ["male", "female"]
 
@@ -11,7 +12,6 @@ class Friend < ApplicationRecord
   validates :city, presence: true
   validates :price, presence: true
   validates :description, presence: true
-  has_one_attached :photo
 end
 
 # , format: { with: '/\A[a-zA-Z]+\z/', message: "only allow messages" }

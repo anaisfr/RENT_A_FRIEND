@@ -2,7 +2,7 @@
 
 <ul>
   <% denied_bookings = @bookings.where(status: "denied")  %>
-  <% accepted_bookings.each do |booking|  %>
+  <% denied_bookings.each do |booking|  %>
     <li>
          <% name = "#{booking.friend.first_name} #{booking.friend.last_name}" %>
          <%= link_to "#{name}", friend_path(booking.friend) %>

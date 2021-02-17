@@ -1,15 +1,23 @@
 <h1>List booking current_user</h1>
 
-<h2>Test 1</h2>
-
-<%= render 'shared/history' %>
-<%= render 'shared/booking-pending' %>
-<%= render 'shared/booking-accepted' %>
-<%= render 'shared/booking-denied' %>
-<%= render 'shared/card-profil' %>
 
 
 
+<div class="container">
+  <div class="personnal-information-lists">
+    <div class="personnal-information">
+      <%= render 'shared/card-profil' %>
+    </div>
+    <div class="lists-bookings">
+      <%= render 'shared/booking-pending' %>
+      <%= render 'shared/booking-accepted' %>
+      <%= render 'shared/booking-denied' %>
+    </div>
+  </div>
+  <div class= "history-bookings">
+    <%= render 'shared/history' %>
+  </div>
+</div>
 
 
 

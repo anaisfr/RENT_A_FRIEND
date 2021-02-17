@@ -1,12 +1,14 @@
- <ul>
-  <% @friends.each do |friend| %>
-      <li>
-        <% name = "#{friend.first_name} #{friend.last_name}" %>
-        <%= link_to "#{name}" , friend_path(friend)  %>
-        <%= friend.age  %>
-        <%= friend.city  %>
-        <%= friend.gender  %>
-        <%= friend.price  %>
-      </li>
-  <%  end  %>
-</ul>
+
+<div class="card-profil">
+    <%= cl_image_tag @user.photo.key, height: 300, width: 400, crop: :fill %>
+    <ul>
+      <li> My first name : <%= @user.firstname %></li>
+       <li> My last name : <%= @user.lastname %></li>
+        <li>My age : <%= @user.age %></li>
+        <li>My city :<%= @user.city %></li>
+        <li>My gender :<%= @user.gender %></li>
+        <li><%= @user.price %></li>
+    </ul>
+    <button class="btn-blue"><%= link_to "Add a friend", new_friend_path(user)%></button>
+</div>
+

@@ -1,0 +1,21 @@
+.personnal-information-lists {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .personnal-information {
+      display: inline-block;
+      align-items: center;
+  }
+
+}
+
+.lists-bookings {
+    display: inline-block;
+}
+
+
+.history-bookings {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

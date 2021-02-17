@@ -12,8 +12,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # POST /resource
    def create
      super
-     if @user.photo.nil?
-       @user.photo.attach(filename: 'avatar.jpg', content_type: 'image/jpg')
+     @user.photo.attach(filename: 'avatar.jpg', content_type: 'image/jpg') if @user.photo.nil?
    end
 
   # GET /resource/edit

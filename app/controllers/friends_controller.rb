@@ -1,5 +1,6 @@
 class FriendsController < ApplicationController
   before_action :set_friend, only: [:show]
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
     @friends = Friend.all

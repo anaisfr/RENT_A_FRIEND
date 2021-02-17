@@ -1,12 +1,11 @@
 .footer {
-  background: #b3b1b1;
+  background: $blue;
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 100px;
   padding: 0px 50px;
   color: white;
-  position:fixed;
   bottom: 0;
   width: 100%;
 }
@@ -25,13 +24,9 @@
   opacity: 1;
 }
 .footer .fa-heart {
-  color: #D23333;
+  color: $light-gray;
 }
 
-.page-container {
-  position:relative;
-  min-width: 100vh;
-  margin:0 auto;
-}
+
 
 

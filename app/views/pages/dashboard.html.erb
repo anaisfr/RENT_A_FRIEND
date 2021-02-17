@@ -52,6 +52,23 @@
    <% end %>
 </ul>
 
+<h2> All my friends</h2>
+
+ <ul>
+  <% @friends.each do |friend| %>
+      <li>
+        <% name = "#{friend.first_name} #{friend.last_name}" %>
+        <%= link_to "#{name}" , friend_path(friend)  %>
+        <%= friend.age  %>
+        <%= friend.city  %>
+        <%= friend.gender  %>
+        <%= friend.price  %>
+      </li>
+  <%  end  %>
+</ul>
+
+
+
 
 
 

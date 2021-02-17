@@ -1,71 +1,12 @@
 <h1>List booking current_user</h1>
 
-<h2>Bookings pending</h2>
+<h2>Test 1</h2>
 
-
-<ul>
-  <% pending_bookings = @bookings.where(status: "pending")  %>
-  <% pending_bookings.each do |booking|  %>
-    <li>
-         <% name = "#{booking.friend.first_name} #{booking.friend.last_name}" %>
-         <%= link_to "#{name}", friend_path(booking.friend) %>
-         <%= booking.friend.age  %>
-         <%= booking.friend.gender %>
-         <%= booking.friend.city %>
-         <%= booking.friend.price  %>
-         <%= link_to "accept",  accepted_booking_path(booking), method: :patch %>
-         <%= link_to "deny",  denied_booking_path(booking), method: :patch %>
-    </li>
-   <% end %>
-</ul>
-
-<h2>Bookings accepted</h2>
-
-<ul>
-  <% accepted_bookings = @bookings.where(status: "accepted")  %>
-  <% accepted_bookings.each do |booking|  %>
-    <li>
-         <% name = "#{booking.friend.first_name} #{booking.friend.last_name}" %>
-         <%= link_to "#{name}", friend_path(booking.friend) %>
-         <%= booking.friend.age  %>
-         <%= booking.friend.gender %>
-         <%= booking.friend.city %>
-         <%= booking.friend.price  %>
-    </li>
-   <% end %>
-</ul>
-
-
-<h2>Bookings denied</h2>
-
-<ul>
-  <% denied_bookings = @bookings.where(status: "denied")  %>
-  <% accepted_bookings.each do |booking|  %>
-    <li>
-         <% name = "#{booking.friend.first_name} #{booking.friend.last_name}" %>
-         <%= link_to "#{name}", friend_path(booking.friend) %>
-         <%= booking.friend.age  %>
-         <%= booking.friend.gender %>
-         <%= booking.friend.city %>
-         <%= booking.friend.price  %>
-    </li>
-   <% end %>
-</ul>
-
-<h2> All my friends</h2>
-
- <ul>
-  <% @friends.each do |friend| %>
-      <li>
-        <% name = "#{friend.first_name} #{friend.last_name}" %>
-        <%= link_to "#{name}" , friend_path(friend)  %>
-        <%= friend.age  %>
-        <%= friend.city  %>
-        <%= friend.gender  %>
-        <%= friend.price  %>
-      </li>
-  <%  end  %>
-</ul>
+<%= render 'shared/history' %>
+<%= render 'shared/booking-pending' %>
+<%= render 'shared/booking-accepted' %>
+<%= render 'shared/booking-denied' %>
+<%= render 'shared/card-profil' %>
 
 
 

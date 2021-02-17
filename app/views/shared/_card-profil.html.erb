@@ -1,14 +1,13 @@
 
 <div class="card-profil">
-    <%= cl_image_tag @user.photo.key, height: 300, width: 400, crop: :fill %>
+    <%= cl_image_tag @user.photo.key, height: 150, width: 200, crop: :fill %>
     <ul>
-      <li> My first name : <%= @user.firstname %></li>
-       <li> My last name : <%= @user.lastname %></li>
+      <li> My first name : <%= @user.first_name %></li>
+       <li> My last name : <%= @user.last_name %></li>
         <li>My age : <%= @user.age %></li>
         <li>My city :<%= @user.city %></li>
         <li>My gender :<%= @user.gender %></li>
-        <li><%= @user.price %></li>
     </ul>
-    <button class="btn-blue"><%= link_to "Add a friend", new_friend_path(user)%></button>
+    <button class="btn-blue"><%= link_to "Add a friend", new_friend_path(@user)%></button>
 </div>
 

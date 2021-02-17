@@ -1,4 +1,4 @@
-<h1>List booking current_user</h1>
+<h1>Your dashboard</h1>
 
 
 
@@ -9,9 +9,57 @@
       <%= render 'shared/card-profil' %>
     </div>
     <div class="lists-bookings">
-      <%= render 'shared/booking-pending' %>
-      <%= render 'shared/booking-accepted' %>
-      <%= render 'shared/booking-denied' %>
+			<div class="list-pending">
+			  <h2>Pending bookings</h2>
+				<ul>
+					<%pending_bookings = @bookings.where(status: "pending")  %>
+					<% pending_bookings.each do |booking|  %>
+						<li>
+							<div class="card-product">
+								<img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+								<div class="card-product-infos">
+									<h2>Product name</h2>
+									<p>Product description with <strong>relevant info</strong> only.</p>
+								</div>
+							</div>
+						</li>
+					<% end %>
+				</ul>
+			</div>
+      <div class="list_accepted">
+			  <h2>Accepted bookings</h2>
+			  <ul>
+					<%accepted_bookings = @bookings.where(status: "accepted")  %>
+					<% accepted_bookings.each do |booking|  %>
+						<li>
+							<div class="card-product">
+								<img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+								<div class="card-product-infos">
+									<h2>Product name</h2>
+									<p>Product description with <strong>relevant info</strong> only.</p>
+								</div>
+							</div>
+						</li>
+					<% end %>
+				</ul>
+			</div>
+			<div class="list_denied">
+			  <h2>Denied bookings</h2>
+			  <ul>
+					<%denied_bookings = @bookings.where(status: "denied")  %>
+					<% denied_bookings.each do |booking|  %>
+						<li>
+							<div class="card-product">
+								<img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+								<div class="card-product-infos">
+									<h2>Product name</h2>
+									<p>Product description with <strong>relevant info</strong> only.</p>
+								</div>
+							</div>
+						</li>
+					<% end %>
+				</ul>
+			</div>
     </div>
   </div>
   <div class= "history-bookings">

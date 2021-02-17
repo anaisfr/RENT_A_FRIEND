@@ -1,0 +1,16 @@
+<h2>Bookings accepted</h2>
+
+<ul>
+  <% accepted_bookings = @bookings.where(status: "accepted")  %>
+  <% accepted_bookings.each do |booking|  %>
+    <li>
+         <% name = "#{booking.friend.first_name} #{booking.friend.last_name}" %>
+         <%= link_to "#{name}", friend_path(booking.friend) %>
+         <%= booking.friend.age  %>
+         <%= booking.friend.gender %>
+         <%= booking.friend.city %>
+         <%= booking.friend.price  %>
+    </li>
+   <% end %>
+</ul>
+

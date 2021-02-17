@@ -1,0 +1,25 @@
+                  <%archived_bookings = @bookings.where(status: "archived")  %>
+					<% archived_bookings.each do |booking|  %>
+						<li>
+							<div class="card-product">
+								<%= cl_image_tag booking.friend.photo.key, height: 400, width: 400, crop: :fit %>
+								<div class="card-product-infos">
+									<h2>
+										<%= booking.friend.first_name  %>
+										<%= booking.friend.last_name  %>
+									</h2>
+											<p> Beginning :
+									  <%= booking.start_date.day %>
+									  <%= date_formatter(booking.start_date)  %>
+										<%= booking.start_date.year %>
+										End :
+										<%= booking.end_date.day %>
+										<%= date_formatter(booking.end_date)  %>
+										<%= booking.end_date.year %>
+									</p>
+                                    <%= link_to archived_booking_path(booking), method: :patch do %>
+                                    <% end %>
+								</div>
+							</div>
+						</li>
+					<% end %>

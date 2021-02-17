@@ -7,6 +7,9 @@
 									<h2>
 										<%= booking.friend.first_name  %>
 										<%= booking.friend.last_name  %>
+                                        <%= link_to archived_booking_path(booking), method: :patch do  %>
+                                        <i class="fas fa-archive"></i>
+                                        <% end %>
 									</h2>
 										<p> Beginning :
 									  <%= booking.start_date.day %>

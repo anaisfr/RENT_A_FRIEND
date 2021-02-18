@@ -1,14 +1,26 @@
-<div class="owner-booking-card">
-  <% my_friends = current_user.friends %>
-  <% my_friends.each do |friend| %>
-    <%= cl_image_tag friend.photo.key, height: 400, width: 400, crop: :fit %>
-    <div class="owner-booking-info">
-      <h4><%= friend.first_name %> <%= friend.last_name %></h4>
-      <p>From <%= %> to <%= %></p>
-    </div>
-    <div class="owner-booking-buttons">
-      <span><%= link_to "Accept", accepted_booking_path(booking), method: :patch %></span>
-      <span><%= link_to "Deny", denied_booking_path(booking), method: :patch %></span>
-    </div>
-  <% end %>
-</div>
+<% my_friends = Friend.all.where(user: current_user) %>
+   <% my_friends.each do |friend| %>
+     <% my_friends_bookings_pending = friend.bookings.where(status: "pending") %>
+     <% my_friends_bookings_pending.each do |booking| %>
+       <div class="renter-booking-card">
+         <%= cl_image_tag booking.friend.photo.key, height: 400, width: 400, crop: :fit %>
+         <div class="renter-booking-info">
+           <h4><%= booking.friend.first_name %> <%= booking.friend.last_name %></h4>
+           <p>
+             From 
+             <%= booking.start_date.day %>
+					   <%= date_formatter(booking.start_date)  %>
+					   <%= booking.start_date.year %> 
+             to 
+             <%= booking.end_date.day %>
+					   <%= date_formatter(booking.end_date)  %>
+					   <%= booking.end_date.year %>
+           </p>
+         </div>
+         <div class="renter-booking-buttons">
+           <span><%= link_to "Accepte", accepted_booking_path(booking), method: :patch %></span>
+           <span><%= link_to "Deny", denied_booking_path(booking), method: :patch %></span>
+         </div>
+       </div>
+     <% end %>
+    <% end %>

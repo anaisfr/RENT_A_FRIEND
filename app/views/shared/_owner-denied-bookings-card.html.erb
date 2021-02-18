@@ -1,0 +1,26 @@
+<% my_friends = Friend.all.where(user: current_user) %>
+   <% my_friends.each do |friend| %>
+     <% my_friends_bookings_denied = friend.bookings.where(status: "denied") %>
+     <% my_friends_bookings_denied.each do |booking| %>
+       <div class="renter-booking-card">
+         <%= cl_image_tag booking.friend.photo.key, height: 400, width: 400, crop: :fit %>
+         <div class="renter-booking-info">
+           <h4><%= booking.friend.first_name %> <%= booking.friend.last_name %></h4>
+           <p>
+             From 
+             <%= booking.start_date.day %>
+					   <%= date_formatter(booking.start_date)  %>
+					   <%= booking.start_date.year %> 
+             to 
+             <%= booking.end_date.day %>
+					   <%= date_formatter(booking.end_date)  %>
+					   <%= booking.end_date.year %>
+           </p>
+         </div>
+         <div class="renter-booking-buttons">
+           <span><%= link_to "Archive", archived_booking_path(booking), method: :patch %></span>
+           <span><%= link_to "Cancel", canceled_booking_path(booking), method: :patch %></span>
+         </div>
+       </div>
+     <% end %>
+    <% end %>

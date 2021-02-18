@@ -24,7 +24,7 @@ file = URI.open("https://source.unsplash.com/400x250/?person,people,portrait")
     first_name:   Faker::Name.first_name,
     last_name:    Faker::Name.last_name,
     email: Faker::Internet.email,
-    age: rand(18..53),
+    age: rand(18..75),
     gender: Friend::GENDER.sample,
     city: Faker::Address.city,
     password: "Lorem ipsum"

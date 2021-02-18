@@ -1,0 +1,14 @@
+<div class="owner-booking-card">
+  <% my_friends = current_user.friends %>
+  <% my_friends.each do |friend| %>
+    <%= cl_image_tag friend.photo.key, height: 400, width: 400, crop: :fit %>
+    <div class="owner-booking-info">
+      <h4><%= friend.first_name %> <%= friend.last_name %></h4>
+      <p>From <%= %> to <%= %></p>
+    </div>
+    <div class="owner-booking-buttons">
+      <span><%= link_to "Accept", accepted_booking_path(booking), method: :patch %></span>
+      <span><%= link_to "Deny", denied_booking_path(booking), method: :patch %></span>
+    </div>
+  <% end %>
+</div>

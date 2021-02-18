@@ -1,15 +1,24 @@
-<div class="container-form">
-  <h2>Add a new friend</h2>
-  <%= simple_form_for(friend) do |f| %>
-  <%= f.input :first_name %>
-  <%= f.input :last_name %>
-  <%= f.input :age %>
-  <%= f.input :gender, collection: Friend::GENDER %>
-  <%= f.input :city %>
-  <%= f.input :price %>
-  <%= f.input :description %>
-  <%= f.input :photo, as: :file %>
-  <%= f.submit "Add my friend" %>
-<% end %>
+ <div class="container-form-new newfriend-form">
+    <%= link_to  "back to friends", friends_path , class: "btn-white"%>
+    <%= simple_form_for(friend) do |f| %>
+    <h2>Add a new friend</h2>
+      <div class="addfriend-input">
+      <%= f.input :first_name %>
+      <%= f.input :last_name %>
+      <%= f.input :photo, as: :file %>
+      <%= f.input :age %>
+      <%= f.input :description %>
+      <%= f.input :gender, collection: Friend::GENDER %>
+      <%= f.input :city %>
+      <%= f.input :price %>
+      </div>
+      <div class="button-back">
+         <%= f.submit 'Add my friend', {class: 'btn-blue'} %>
+      </div>
+  <% end %>
+
+    <div class="img-new-form">
+    </div>
 
 </div>
+

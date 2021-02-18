@@ -1,6 +1,5 @@
 <%= render 'shared/navbar' %>
 
-
   <%= form_tag friends_path, class: 'flex', method: :get do %>
     <%= text_field_tag :query,
       params[:query],
@@ -27,9 +26,6 @@
     </select>
     <%= submit_tag "Search", class: "search-btn" %>
   <% end %>
-
-  
-
 
 <div class="wrapper">
   <% @friends.each do |friend| %>

@@ -1,6 +1,6 @@
 <%= render 'shared/navbar' %>
 
-<div class="container cst-margin-top">
+<!-- <div class="container cst-margin-top">
   <div class="friend-show">
     <div class="friend-show-img">
       <%= cl_image_tag @friend.photo.key, height: 400, width: 400, crop: :fit %>
@@ -31,7 +31,51 @@
     <%= link_to "Book this friend", new_friend_booking_path(@friend), class: 'btn-blue' %>
     <%= link_to "Back to all the friends", friends_path, class: 'btn-white cst-margin-left' %>
   </div>
+</div> -->
+<div class="show-header">
 </div>
-<div class="fixed-footer">
-  <%= render 'shared/footer' %>
+<div class="show-friend-img">
+  <%= cl_image_tag @friend.photo.key, height: 200, width: 200, crop: :fit %>
 </div>
+<div class="show-grid">
+
+  <div class="show-container">
+
+    <div class="show-friend-intro grey-box">
+      <h3>Meet <%= @friend.first_name %></h3>
+      <% if @friend.gender == "male"%>
+      <p>He currently lives in <%= @friend.city %>.</p>
+      <% else %>
+      <p>She currently lives in <%= @friend.city %>.</p>
+      <% end %>
+    </div>
+
+    <div class="show-friend-description grey-box">
+      <h3>A bit more about <%= @friend.first_name %></h3>
+      <p><%= @friend.description %></p>
+    </div>
+
+    <div class="show-friend-details grey-box">
+      <h3>Details</h3>
+      <div class="aligned-details">
+        <p><i class="fas fa-euro-sign"></i> <%= @friend.price %> / day</p>
+        <% if @friend.gender == "male"%>
+          <p><i class="fas fa-mars"></i> Man</p>
+          <% else %>
+          <p><i class="fas fa-venus"></i> Woman</p>
+          <% end %>
+        <p><i class="fas fa-birthday-cake"></i> <%= @friend.age %></p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="show-book-form grey-box">
+    <h3>Book <%= @friend.first_name %></h3>
+    <%= render "bookings/booking_form", booking: @booking %>
+  </div>
+
+</div>
+
+<%= render 'shared/footer' %>
+

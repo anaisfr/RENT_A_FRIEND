@@ -1,0 +1,38 @@
+.flex {
+    display: flex;
+    justify-content: space-between;
+    margin: 55px 120px 40px 120px;
+    padding: 0px;
+    background: white;
+    border: 1px solid grey;
+    border-radius: 50px;
+}
+
+.search-bar {
+    border: 0px solid grey;
+    margin-left: 30px;
+}
+
+.search-btn {
+    color: white;
+    border: 0px solid grey;
+    margin: -1px -1px -1px -1px;
+    padding: 11px 50px;
+    background: #FF2787;
+    border-radius: 50px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+
+}
+
+.gender {
+    border: 0px solid grey;
+}
+
+.age {
+    border: 0px solid grey;
+}
+
+.price {
+    border: 0px solid grey;
+}

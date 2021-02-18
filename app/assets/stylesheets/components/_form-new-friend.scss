@@ -1,8 +1,42 @@
-.container-form {
-  width: 600px;
-  border-radius: 5px;
-  box-shadow: 0 0 5px rgb(230,230,230);
-  padding: 20px;
-  border: 1px solid rgb(230,230,230);
-  margin-right: 25px;
+.container-form-new {
+  display: flex;
+  padding: 30px 90px 60px 90px;
+  position: relative;
+  a {
+    position: absolute;
+    top: 0;
+  }
 }
+
+.newfriend-form {
+  padding-top: 80px;
+}
+
+
+.simple_form {
+  width: 50%;
+  border-radius: 5px 0 0 5px;
+  padding: 20px;
+  border: 1px solid #e6e6e6;
+   h2 {
+    color: $blue;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 20px;
+   }
+}
+
+.img-new-form {
+  width: 50%;
+  border-radius: 0 5px 5px 0;
+  background-image: url('https://images.unsplash.com/photo-1502480034106-af7b4369e666?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80')
+}
+
+.simple_form, .img-new-form {
+  box-shadow: 0 0 5px #e6e6e6;
+}
+
+.addfriend-input {
+  padding-right: 10%;
+}
+

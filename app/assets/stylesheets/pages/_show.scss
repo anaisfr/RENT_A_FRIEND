@@ -54,6 +54,15 @@
   grid-column: 2;
 }
 
+.final-price {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  & h3 {
+    margin-right: 10px;
+  }
+}
+
 input {
   border: none;
   background-color: #FF2787;

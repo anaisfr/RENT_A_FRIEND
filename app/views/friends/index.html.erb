@@ -1,8 +1,9 @@
 <%= render 'shared/navbar' %>
 
 <div class="wrapper">
-  <% @friends.each do |friend| %>
 
+  <% @friends.each do |friend| %>
+  <%= link_to friend_path(friend) do %>
     <div class="card-friend">
       <div class="card-friend-img grid-item">
       </div>
@@ -20,10 +21,11 @@
           <p><i class="fas fa-euro-sign"></i> <%= friend.price %></p>
         </div>
         <div class="btn-book">
-          <%= link_to "Book", friend_path(friend) %>
+          <p>Book</p>
         </div>
       </div>
     </div>
+    <% end  %>
   <% end  %>
 </div>
 

@@ -1,12 +1,23 @@
-.personnal-information-lists {
+.wrapper-bookings-friends {
   display: flex;
   justify-content: space-between;
   align-items: center;
   .my-friends {
       display: inline-block;
       align-items: center;
+      border: solid 1px grey;
+      border-radius: 15px;
+      margin-bottom: 15px;
+      padding: 10px;
   }
 
+}
+
+.my-friends-bookings {
+    border: solid 1px grey;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    padding: 10px;
 }
 
 .my-friends-my-friends-bookings {
@@ -17,12 +28,36 @@
     display: inline-block;
 }
 
+.list-accepted {
+  border: solid 1px grey;
+  border-radius: 15px;
+  margin-bottom: 15px;
+  padding: 10px;
+}
+
+.list-denied {
+    border: solid 1px grey;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    padding: 10px;
+}
+
+.list-pending {
+    border: solid 1px grey;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    padding: 10px;
+}
 
 .history-bookings {
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 40px;
+    border: solid 1px grey;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    padding: 10px;
 }
 
 ul {

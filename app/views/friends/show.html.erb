@@ -72,7 +72,7 @@
 
   <div class="show-book-form grey-box">
     <h3>Book <%= @friend.first_name %></h3>
-    <%= render "bookings/booking_form", booking: @booking %>
+    <%= render "bookings/booking_form", booking: @booking, class: 'friend-show-book-form' %>
     <div class="final-price">
       <h3>Total:</h3>
       <h3 class="total"></h3>

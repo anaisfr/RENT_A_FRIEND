@@ -1,6 +1,7 @@
 class Booking < ApplicationRecord
   belongs_to :user
   belongs_to :friend
+  has_one :review
 
   validates :user, presence: true
   validates :friend, presence: true

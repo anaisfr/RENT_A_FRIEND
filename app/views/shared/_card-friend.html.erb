@@ -17,6 +17,13 @@
 									  <%= friend.city %>
 									  <%= friend.gender %>
 										<%= friend.price %>
+										<% friend_ratings = 0 %>
+									  <% friend.reviews.each do |review| %>
+											<% friend_ratings += review.rating %>
+											<% number_reviews = friend.reviews.count  %>
+											<% friend_ratings = friend_ratings / number_reviews %>
+									  <% end %>
+										<%= friend_ratings %>
 									</p>
 								</div>
 							</div>

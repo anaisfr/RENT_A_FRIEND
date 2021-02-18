@@ -12,6 +12,9 @@
   & img {
     border-radius: 50%;
     border: solid 6px #fff;
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
   }
 }
 
@@ -52,6 +55,10 @@
 .show-book-form {
   grid-row: 1;
   grid-column: 2;
+}
+
+#new_booking {
+  width: 100%;
 }
 
 .final-price {

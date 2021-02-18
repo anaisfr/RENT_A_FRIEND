@@ -14,9 +14,14 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.friend = Friend.find(params[:friend_id])
     @friend = @booking.friend
-    @booking.user = current_user
-    @booking.save
-    redirect_to dashboard_path
+
+    if @friend.user == current_user
+      redirect_to new_friend_booking_path
+    else
+      @booking.user = current_user
+      @booking.save
+      redirect_to dashboard_path
+    end
   end
 
   def accepted

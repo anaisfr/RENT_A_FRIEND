@@ -54,6 +54,10 @@
   grid-column: 2;
 }
 
+#new_booking {
+  width: 100%;
+}
+
 .final-price {
   display: flex;
   align-items: center;
@@ -63,7 +67,7 @@
   }
 }
 
-input {
+.btn-pink {
   border: none;
   background-color: #FF2787;
   color: #fff;

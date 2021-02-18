@@ -1,10 +1,8 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-      <a class="navbar-brand" href="#">
         <div class="logo">
           <%= link_to ('<i class="fa fa-user-friends"></i>').html_safe, root_path  %>
           <h4 id='text'>Rent a Friend</h4>
         </div>
-     </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -24,7 +22,6 @@
               </div>
             </li>
           </ul>
-
     <% else %>
        <div class="menu">
                <li class="nav-item active">
@@ -32,6 +29,8 @@
               </li>
               <li class="nav-item">
               <%= link_to "Sign up", new_user_registration_path %>
+              <li class="nav-item">
+              <%= link_to "Log in", new_user_session_path %>
               </li>
             </div>
      <% end %>

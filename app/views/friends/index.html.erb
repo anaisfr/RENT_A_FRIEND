@@ -1,7 +1,37 @@
 <%= render 'shared/navbar' %>
 
-<div class="wrapper">
 
+  <%= form_tag friends_path, class: 'flex', method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "search-bar",
+      placeholder: "Find a friend"
+    %>
+    <select name="gender" class="gender">
+      <option value="gender">Gender</option>
+      <option value="male">Man</option>
+      <option value="female">Woman</option>
+    </select>
+    <select name="age" class="age">
+      <option value="age">Age</option>
+      <option value="10,19">10-19</option>
+      <option value="20,29">20-29</option>
+      <option value="30,39">30-39</option>
+      <option value="40,60">40-60</option>
+    </select>
+    <select name="price" class="price">
+      <option value="price">Price</option>
+      <option value="0,999">0$-999$</option>
+      <option value="1000,1999">1000$-1999$</option>
+      <option value="2000,2999">2000$-2999$</option>
+    </select>
+    <%= submit_tag "Search", class: "search-btn" %>
+  <% end %>
+
+  
+
+
+<div class="wrapper">
   <% @friends.each do |friend| %>
   <%= link_to friend_path(friend) do %>
     <div class="card-friend">

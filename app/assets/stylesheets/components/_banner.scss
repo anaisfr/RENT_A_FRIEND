@@ -1,20 +1,39 @@
-.banner {
-    display: flex;
-    align-items: center;
-    // background: url("banner.jpg");
-    background-size: cover;
-    padding: 200px 0px 200px 75px;
-    border-radius: 20px;
-    height: 450px;
-    margin-top: 10px;
+.banner-hp {
+  margin-top: 10px;
+  display: grid;
+  grid-template-column: repeat(3, 1fr);
+  background-color: #07004D;
+  height: 450px;
+  width: 100vw;
 }
 
-.baseline h2 {
-  margin-bottom: 35px;
-  border-radius: 15px;
-  color: white;
-  font-size: 60px;
-  text-shadow: 0 0 5px black;
+.image-banner {
+  height: 450px;
+  grid-column: 2 / 4;
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.baseline-content {
+  position: absolute;
+  right: -150px;
+  top: 40px;
+}
+
+.baseline {
+  width: 40vw;
+  position: relative;
+  h2 {
+    margin-bottom: 35px;
+    border-radius: 15px;
+    color: white;
+    font-size: 93px;
+    text-shadow: 0 0 5px black;
+    padding: 0;
+  }
 }
 
 .hero-button {
@@ -26,7 +45,7 @@
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  width: 164px;
+  width: calc(100% - 180px);
   border-radius: 5px;
 }
 

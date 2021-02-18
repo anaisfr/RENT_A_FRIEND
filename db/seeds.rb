@@ -24,7 +24,7 @@ file = URI.open("https://source.unsplash.com/400x250/?person,people,portrait")
     first_name:   Faker::Name.first_name,
     last_name:    Faker::Name.last_name,
     email: Faker::Internet.email,
-    age: rand(18..53),
+    age: rand(18..75),
     gender: Friend::GENDER.sample,
     city: Faker::Address.city,
     password: "Lorem ipsum"
@@ -35,17 +35,17 @@ file = URI.open("https://source.unsplash.com/400x250/?person,people,portrait")
 end
 
 friends = []
-10.times do |index|
+30.times do |index|
   puts "Creating friend n°#{index}"
 file = URI.open("https://source.unsplash.com/400x250/?person,people,portrait")
   friend = Friend.new(
     first_name:   Faker::Name.first_name,
     last_name:    Faker::Name.last_name,
-    age: rand(18..53),
+    age: rand(18..75),
     gender: Friend::GENDER.sample,
     city: Faker::Address.city,
-    price: rand(50..3500),
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id odio sed tortor scelerisque sollicitudin a non lorem. Aliquam ultricies dolor a felis pharetra, vitae viverra sapien fermentum",
+    price: rand(50..300),
+    description: Faker::TvShows::Simpsons.,
     user: users.sample
   )
   friend.photo.attach(io: file, filename: 'avatar.png', content_type: 'image/png')

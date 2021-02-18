@@ -1,14 +1,25 @@
 
-<div class="card-profil">
-   <h2> My personal information </h1>
-    <%= cl_image_tag @user.photo.key, height: 150, width: 200, crop: :fill, class: 'pic' %>
-    <ul>
-      <li> My first name: <%= @user.first_name %></li>
-       <li> My last name: <%= @user.last_name %></li>
-        <li>My age: <%= @user.age %></li>
-        <li>My city: <%= @user.city %></li>
-        <li>My gender: <%= @user.gender %></li>
-    </ul>
-    <button class="btn-white"><%= link_to "Add a friend", new_friend_path(@user)%></button>
-</div>
+        
+      <div>
+        <h2>All my friends</h2>
 
+        <% my_friends = @friends.where(user: current_user)  %>
+					<% my_friends.each do |friend|  %>
+						<li>
+							<div class="card-product">
+								<%= cl_image_tag friend.photo.key, height: 400, width: 400, crop: :fit %>
+								<div class="card-product-infos">
+									<h2>
+										<%= friend.first_name  %>
+										<%= friend.last_name  %>
+									</h2>
+									<p>
+									  <%= friend.city %>
+									  <%= friend.gender %>
+										<%= friend.price %>
+									</p>
+								</div>
+							</div>
+						</li>
+					<% end %>
+        </div>

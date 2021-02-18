@@ -13,6 +13,15 @@ h3 {
   box-shadow: 0 0 15px rgb(230, 230, 230);
   border-radius: 3px;
   position: relative;
+  transition: all .2s ease-in-out;
+}
+
+.card-friend:hover {
+  transform: scale(1.1);
+}
+
+a:hover, p {
+  text-decoration: none;
 }
 
 .card-friend-img {
@@ -29,7 +38,7 @@ h3 {
   height: 150px;
   object-fit: cover;
   position: absolute;
-  left: 105px;
+  right: 100px;
   top: 22px;
 }
 
@@ -45,18 +54,43 @@ h3 {
   padding: 0 50px;
 }
 
-.btn-book a {
-  background-color: #07004D;
+.btn-book p {
+  background-color: #FF2787;
   color: #fff;
   font-family: 'Montserrat', sans-serif;
   font-weight: 200;
   text-decoration: none;
-  padding: 10px 15px;
-  border-radius: 3px;
+  padding: 10px 45px;
+  border-radius: 20px;
+  display: inline;
 }
 
 .fas {
-  color: #07004D;
+  color: #FF2787;
   margin-right: 15px;
+}
+
+@media(max-width: 1200px) {
+  .card-friend-avatar {
+    right: 65px;
+  }
+}
+
+@media(max-width: 992px) {
+  .card-friend-avatar {
+    right: 95px;
+  }
+}
+
+@media(max-width: 768px) {
+  .card-friend-avatar {
+    right: 180px;
+  }
+}
+
+@media(max-width: 576px) {
+  .card-friend-avatar {
+    right: 88px;
+  }
 }
 

@@ -1,7 +1,7 @@
 <%= render 'shared/navbar' %>
 
+<h2>Check out our friends (<%= @friends.count%>)</h2>
 <div class="wrapper">
-
   <% @friends.each do |friend| %>
   <%= link_to friend_path(friend) do %>
     <div class="card-friend">

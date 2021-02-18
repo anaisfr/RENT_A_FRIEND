@@ -45,7 +45,7 @@ file = URI.open("https://source.unsplash.com/400x250/?person,people,portrait")
     gender: Friend::GENDER.sample,
     city: Faker::Address.city,
     price: rand(50..300),
-    description: Faker::TvShows::Simpsons.,
+    description: Faker::TvShows::Simpsons.quote,
     user: users.sample
   )
   friend.photo.attach(io: file, filename: 'avatar.png', content_type: 'image/png')

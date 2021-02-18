@@ -38,8 +38,10 @@
   </div>
 
     <%= f.button :submit, "Sign up", class: 'btn-blue' %>
-
 <% end %>
+  <div class="img-signup"></div>
 </div>
-<%= link_to "You already have an account ?", new_session_path(resource_name) %>
+
+<div class="form-link"><%= link_to "You already have an account ?", new_session_path(resource_name) %></div>
+
 <%= render 'shared/footer' %>

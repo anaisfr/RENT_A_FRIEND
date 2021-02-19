@@ -52,8 +52,11 @@ class FriendsController < ApplicationController
   def create
     @friend = Friend.new(friends_params)
     @friend.user = current_user
-    @friend.save
-    redirect_to root_path
+    if @friend.save
+      redirect_to friend_path(@friend)
+    else
+      render :new
+    end
   end
 
   private

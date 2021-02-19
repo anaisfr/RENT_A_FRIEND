@@ -3,7 +3,12 @@
 <div class="show-header">
 </div>
 <div class="show-friend-img">
-  <%= cl_image_tag @friend.photo.key, height: 200, width: 200, crop: :fit %>
+  <% if @friend.photo.attached? %>
+     <%= cl_image_tag @friend.photo.key, height: 200, width: 200, crop: :fit %>
+  <% else %>
+    <%= image_tag("avatar.jpg") %>
+  <% end %>
+
 </div>
 <div class="show-grid">
 

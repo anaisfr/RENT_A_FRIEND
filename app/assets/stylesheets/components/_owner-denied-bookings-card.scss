@@ -1,0 +1,69 @@
+.owner-booking-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #B0B0B0;
+  border-radius: 6px !important;
+  padding: 14px 24px;
+  margin: 15px 0px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.booking-date {
+  display: flex;
+  justify-content: space-between;
+}
+
+.start-date {
+  margin-right: 5px;
+}
+
+.end-date {
+  margin-left: 5px;
+}
+
+.owner-booking-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.owner-booking-button-accept {
+  margin-right: 5px;
+  span {
+    i {
+      color: green;
+    }
+  }
+  
+}
+
+.owner-booking-button-deny {
+  margin-left: 5px;
+  span {
+    i {
+      color: red;
+    }
+  }
+
+}
+
+.owner-booking-info-header {
+  display: flex;
+  justify-content: center;
+}
+
+.owner-booking-card-img {
+  border-right: 1px solid #B0B0B0;
+  img {
+    margin-right: 28px;
+  }
+}
+
+.owner-booking-client {
+  display: flex;
+  align-items: center;
+  p {
+    margin-right: 5px;
+  }
+}

@@ -9,9 +9,10 @@ require 'faker'
 require 'date'
 require "open-uri"
 
-User.destroy_all
-Friend.destroy_all
+Review.destroy_all
 Booking.destroy_all
+Friend.destroy_all
+User.destroy_all
 
 
 puts 'Creating 5 fake users...'

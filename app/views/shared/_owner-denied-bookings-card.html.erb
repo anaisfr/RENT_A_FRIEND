@@ -2,25 +2,41 @@
    <% my_friends.each do |friend| %>
      <% my_friends_bookings_denied = friend.bookings.where(status: "denied") %>
      <% my_friends_bookings_denied.each do |booking| %>
-       <div class="renter-booking-card">
-         <%= cl_image_tag booking.friend.photo.key, height: 400, width: 400, crop: :fit %>
-         <div class="renter-booking-info">
-           <h4><%= booking.friend.first_name %> <%= booking.friend.last_name %></h4>
-           <p>
-             From 
-             <%= booking.start_date.day %>
-					   <%= date_formatter(booking.start_date)  %>
-					   <%= booking.start_date.year %> 
-             to 
-             <%= booking.end_date.day %>
-					   <%= date_formatter(booking.end_date)  %>
-					   <%= booking.end_date.year %>
-           </p>
+       <div class="owner-booking-card">
+         <div class="owner-booking-card-img">
+           <%= cl_image_tag booking.friend.photo.key, height: 100, width: 200, crop: :fit %>
          </div>
-         <div class="renter-booking-buttons">
-           <span><%= link_to "Archive", archived_booking_path(booking), method: :patch %></span>
-           <span><%= link_to "Cancel", canceled_booking_path(booking), method: :patch %></span>
+         <div class="owner-booking-info-buttons">
+          <div class="owner-booking-info">
+            <div class="owner-booking-info-header">
+              <%= link_to friend_path(booking.friend) do  %>
+                <h4><%= booking.friend.first_name %> <%= booking.friend.last_name %></h4>
+              <% end %>
+            </div>
+            <div class="booking-date">
+                <div class="start-date">
+                  <i class="fas fa-hourglass-start"></i> 
+                  <%= booking.start_date.day %>
+                  <%= date_formatter(booking.start_date)  %>
+                  <%= booking.start_date.year %>
+                </div>
+                <div class="end-date">  
+                  <%= booking.end_date.day %>
+                  <%= date_formatter(booking.end_date)  %>
+                  <%= booking.end_date.year %>
+                  <i class="fas fa-hourglass-end"></i>
+                </div>
+            </div>
+          </div>
+          <div class="owner-booking-buttons">
+            <div class="owner-booking-button-accept">
+              <span><%= link_to "Accept", denied_booking_path(booking), method: :patch %></span>
+            </div>
+            <div class="owner-booking-button-deny">
+              <span><%= link_to "Deny", denied_booking_path(booking), method: :patch %></span>
+            </div>
+          </div>
          </div>
        </div>
      <% end %>
-    <% end %>
+   <% end %>

@@ -12,50 +12,24 @@ class FriendsController < ApplicationController
         OR friends.city ILIKE :query \
       "
       @friends = @friends.where(sql_query, query: "%#{params[:query]}%")
+    end
 
-      if params[:gender] != "gender"
-        params[:gender]
-        @friends = @friends.where(gender: params[:gender])
+    if params[:gender] && params[:gender] != "gender"
+      params[:gender]
+      @friends = @friends.where(gender: params[:gender])
+    end
 
-        if params[:age] != "age"
-          array = params[:age].split(",")
-          age_start = array[0]
-          age_end = array[1]
-          sql_query = " \
-            friends.age BETWEEN :start AND :end
-          "
-          @friends = @friends.where(sql_query, start: age_start, end: age_end)
-          if params[:price] != "price"
-            array = params[:price].split(",")
-            price_start = array[0]
-            price_end = array[1]
-            sql_query = " \
-            friends.price BETWEEN :start AND :end
-            "
-            @friends = @friends.where(sql_query, start: price_start, end: price_end)
-          end
-        end
+    if params[:age] && params[:age] != "age"
+      array = params[:age].split(",")
+      age_start = array[0]
+      age_end = array[1]
+      sql_query = " \
+         friends.age BETWEEN :start AND :end
+      "
+      @friends = @friends.where(sql_query, start: age_start, end: age_end)
+    end
 
-      elsif params[:age] != "age"
-        array = params[:age].split(",")
-        age_start = array[0]
-        age_end = array[1]
-        sql_query = " \
-          friends.age BETWEEN :start AND :end
-        "
-        @friends = @friends.where(sql_query, start: age_start, end: age_end)
-
-      elsif params[:price] != "price"
-        array = params[:price].split(",")
-        price_start = array[0]
-        price_end = array[1]
-        sql_query = " \
-        friends.price BETWEEN :start AND :end
-        "
-        @friends = @friends.where(sql_query, start: price_start, end: price_end)
-      end
-
-    elsif params[:price] != "price"
+    if params[:price] && params[:price] != "price"
       array = params[:price].split(",")
       price_start = array[0]
       price_end = array[1]
@@ -63,17 +37,6 @@ class FriendsController < ApplicationController
       friends.price BETWEEN :start AND :end
       "
       @friends = @friends.where(sql_query, start: price_start, end: price_end)
-    
-    elsif params[:age] != "age"
-      array = params[:age].split(",")
-      age_start = array[0]
-      age_end = array[1]
-      sql_query = " \
-      friends.age BETWEEN :start AND :end
-      "
-      @friends = @friends.where(sql_query, start: age_start, end: age_end)
-    else
-      @friends = Friend.all
     end
   end
 

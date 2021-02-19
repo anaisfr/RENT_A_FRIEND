@@ -37,7 +37,14 @@
     <div class="card-friend">
       <div class="card-friend-img grid-item">
       </div>
-      <%= cl_image_tag friend.photo.key, class: 'card-friend-avatar'%>
+
+  <% if friend.photo.attached? %>
+    <%= cl_image_tag friend.photo.key, class: 'card-friend-avatar'%>
+  <% else %>
+    <%= image_tag("avatar.jpg") %>
+  <% end %>
+
+
       <div class="card-friend-body">
         <h3><%= friend.first_name %> <%= friend.last_name %></h3>
         <div class="card-friend-description">

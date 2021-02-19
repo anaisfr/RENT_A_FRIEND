@@ -33,3 +33,18 @@
   padding: 40px 120px;
   }
 }
+
+.message {
+  display: flex;
+  justify-content: center;
+  margin: 40px 120px 40px 120px;
+  padding: 10px;
+  background: white;
+  border: 1px solid grey;
+  border-radius: 50px;
+}
+
+.message p {
+  padding: 0px;
+  margin: 0px;
+}

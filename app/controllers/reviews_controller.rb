@@ -12,7 +12,7 @@ class ReviewsController < ApplicationController
     @booking = @review.booking
     @review.user = current_user
     @review.save
-    redirect_to friends_path
+    redirect_to friend_path(@booking.friend)
   end
 
   private

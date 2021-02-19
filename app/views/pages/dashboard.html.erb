@@ -1,63 +1,59 @@
 <%= render 'shared/navbar' %>
 
-<%  def date_formatter(date) %>
-<% if date.month == 1 %>
-<%  month = "January" %>
-<%  elsif date.month == 2 %>
-<%  month = "February" %>
-<%   elsif date.month == 3 %>
-<%  month = "March" %>
-<%   elsif date.month == 4 %>
-<%  month = "April" %>
-<% elsif date.month == 5 %>
-<%  month = "May" %>
-<%   elsif date.month == 6 %>
-<%    month = "June" %>
-<%  elsif date.month == 7 %>
-<% month = "July" %>
-<%   elsif date.month == 8 %>
-<% month = "August" %>
-<%  elsif date.month == 9 %>
-<% month = "September" %>
-<%  elsif date.month == 10%>
-<%  month = "October" %>
-<%  elsif date.month == 11 %>
-<%  month = "November"%>
-<%  elsif date.month == 12%>
-<% month = "December" %>
-<% else %>
-<% end %>
-<% end %>
 
 
 <div class="container-dashboard">
   <h2 class="dashboard-h2">My dashboard</h2>
-  <div class="dashboard-grid">
-      <div class="owner-pending-cards grid-cell">
-        <h3>Pending cards (owner)</h3>
-        <%= render 'shared/owner-pending-bookings-card' %>
+
+  <h2>My bookings</h2>
+
+      <!-- RENTER DASHBOARD -->
+      <div class="container">
+        <div class="row">
+
+          <div class="col-4">
+            <h3>Pending bookings</h3>
+            <% @pending_bookings.each do |booking| %>
+              <%= render 'shared/owner-pending-bookings-card', booking: booking %>
+            <% end %>
+          </div>
+
+          <div class="col-4">
+            <h3>Accepted bookings</h3>
+            <% @accepted_bookings.each do |booking| %>
+              <%= render 'shared/owner-pending-bookings-card', booking: booking %>
+            <% end %>
+          </div>
+
+          <div class="col-4">
+            <h3>Denied bookings</h3>
+            <% @denied_bookings.each do |booking| %>
+              <%= render 'shared/owner-pending-bookings-card', booking: booking %>
+            <% end %>
+          </div>
+
+        </div>
       </div>
-      <div class="renter-pending-cards grid-cell">
-        <h3>Pending cards (renter)</h3>
-        <%= render 'shared/renter-pending-bookings-card' %>
-      </div>
-      <div class="owner-accepted-cards grid-cell">
-        <h3>Accepted cards (owner)</h3>
-        <%= render 'shared/owner-accepted-bookings-card' %>
-      </div>
-      <div class="renter-accepted-cards grid-cell">
-        <h3>Accepted cards (renter)</h3>
-        <%= render 'shared/renter-accepted-bookings-card' %>
-      </div>
-      <div class="owner-denied-cards grid-cell">
-        <h3>Denied cards (owner)</h3>
-        <%= render 'shared/owner-denied-bookings-card' %>
-      </div>
-      <div class="renter-denied-cards grid-cell">
-        <h3>Denied cards (renter)</h3>
-        <%= render 'shared/renter-denied-bookings-card' %>
+
+      <!-- OWNER DASHBOARD -->
+    <h2>My booking requests</h2>
+    <div class="container">
+      <div class="row">
+
+        <div class="col-4">
+          <h3>Pending request</h3>
+        </div>
+
+        <div class="col-4">
+          <h3>Accepted request</h3>
+        </div>
+
+        <div class="col-4">
+          <h3>Denied request</h3>
+        </div>
       </div>
   </div>
+
 </div>
 
 <%= render 'shared/footer' %>

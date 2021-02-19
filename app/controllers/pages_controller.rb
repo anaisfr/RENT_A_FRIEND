@@ -7,6 +7,12 @@ class PagesController < ApplicationController
 
   def dashboard
     @bookings = Booking.all
+    @pending_bookings = Booking.joins(:friend).where(status: "pending", friends: { user: current_user })
+    @accepted_bookings = Booking.joins(:friend).where(status: "accepted", friends: { user: current_user })
+    @denied_bookings = Booking.joins(:friend).where(status: "denied", friends: { user: current_user })
+    # @pending_bookings = current_user.friends.map {|friend| friend.bookings.where(status: "pending") }.flatten
+    # @accepted_bookings = current_user.friends.map {|friend| friend.bookings.where(status: "accepted") }.flatten
+    # @denied_bookings = current_user.friends.map {|friend| friend.bookings.where(status: "denied") }.flatten
     @friends = Friend.all
     @user = User.all
   end

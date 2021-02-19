@@ -1,55 +1,17 @@
-<% my_friends = Friend.all.where(user: current_user) %>
-   <% my_friends.each do |friend| %>
-     <% my_friends_bookings_pending = friend.bookings.where(status: "pending") %>
-     <% my_friends_bookings_pending.each do |booking| %>
-       <div class="owner-booking-card">
-         <div class="owner-booking-card-img">
-           <%= cl_image_tag booking.friend.photo.key, height: 100, width: 200, crop: :fit %>
-         </div>
-         <div class="owner-booking-info-buttons">
-          <div class="owner-booking-info">
-            <div class="owner-booking-info-header">
-              <%= link_to friend_path(booking.friend) do  %>
-                <h4><%= booking.friend.first_name %> <%= booking.friend.last_name %></h4>
-              <% end %>
-            </div>
-            <div class="owner-booking-client">
-              <p>Reserved </p>
-              <p>by </p>
-              <p><%= booking.user.first_name %> <%= booking.user.last_name %> </p>
-            </div>
-            <div class="booking-date">
-                <div class="start-date">
-                  <i class="fas fa-hourglass-start"></i> 
-                  <%= booking.start_date.day %>
-                  <%= date_formatter(booking.start_date)  %>
-                  <%= booking.start_date.year %>
-                </div>
-                <div class="end-date">  
-                  <%= booking.end_date.day %>
-                  <%= date_formatter(booking.end_date)  %>
-                  <%= booking.end_date.year %>
-                  <i class="fas fa-hourglass-end"></i>
-                </div>
-            </div>
-          </div>
-          <div class="owner-booking-buttons">
-            <div class="owner-booking-button-accept">
-              <span>
-                <%= link_to accepted_booking_path(booking), method: :patch do %>
-                  <i class="far fa-check-circle"></i>
-                <% end %>
-              </span>
-            </div>
-            <div class="owner-booking-button-deny">
-              <span>
-                <%= link_to denied_booking_path(booking), method: :patch do %>
-                  <i class="far fa-times-circle"></i>
-                <% end %>
-              </span>
-            </div>
-          </div>
-         </div>
-       </div>
-     <% end %>
-    <% end %>
+<div class="booking-request-card">
+
+  <h3><%= booking.friend.first_name %> <%= booking.friend.last_name %></h3>
+
+  <div class="booking-request-dates">
+    <p><strong>Start date:</strong> <%= booking.start_date.day %> <%= date_formatter(booking.start_date) %> <%= booking.start_date.year %></p>
+    <p><strong>End date:</strong> <%= booking.end_date.day %> <%= date_formatter(booking.end_date) %> <%= booking.end_date.year %></p>
+  </div>
+
+  <div class="booking-request-btn">
+    <%= link_to "Accept", accepted_booking_path(booking), method: :patch %>
+    <%= link_to "Deny", denied_booking_path(booking), method: :patch %>
+  </div>
+
+</div>
+
+

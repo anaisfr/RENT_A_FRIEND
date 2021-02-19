@@ -1,6 +1,7 @@
 <div class="booking-request-card">
-
+  <%= link_to friend_path(booking.friend) do  %>
   <h3><%= booking.friend.first_name %> <%= booking.friend.last_name %></h3>
+  <% end %>
 
   <div class="booking-request-dates">
     <p><strong>Start date:</strong> <%= booking.start_date.day %> <%= date_formatter(booking.start_date) %> <%= booking.start_date.year %></p>

@@ -41,7 +41,7 @@
   <% if friend.photo.attached? %>
     <%= cl_image_tag friend.photo.key, class: 'card-friend-avatar'%>
   <% else %>
-    <%= image_tag("avatar.jpg") %>
+    <%= image_tag "avatar.jpg", class: 'card-friend-avatar' %>
   <% end %>
 
 

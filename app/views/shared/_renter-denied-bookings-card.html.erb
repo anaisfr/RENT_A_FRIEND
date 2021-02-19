@@ -12,6 +12,11 @@
             <h4><%= booking.friend.first_name %> <%= booking.friend.last_name %></h4>
           <% end %>
         </div>
+        <div class="renter-booking-owner">
+            <p>Owned </p>
+            <p>by </p>
+            <p><%= booking.friend.user.first_name %> <%= booking.friend.user.last_name %> </p>
+        </div>
         <div class="booking-date">
           <div class="start-date">
             <i class="fas fa-hourglass-start"></i> 
@@ -28,7 +33,7 @@
         </div>
       </div>
       <div class="renter-booking-buttons">
-        <div class="renter-booking-button-accept">
+        <div class="renters-status-deny">
           <span>denied</span>
         </div>
       </div>

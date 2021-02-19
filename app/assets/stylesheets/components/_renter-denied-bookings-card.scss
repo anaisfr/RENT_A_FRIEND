@@ -28,8 +28,11 @@
   justify-content: center;
 }
 
-.renter-booking-button-accept {
+.renters-status-deny {
   margin-right: 5px;
+  span {
+    color: red;
+  }
   
 }
 
@@ -47,5 +50,12 @@
   border-right: 1px solid #B0B0B0;
   img {
     margin-right: 28px;
+  }
+}
+.renter-booking-owner {
+  display: flex;
+  align-items: center;
+  p {
+    margin-right: 5px;
   }
 }

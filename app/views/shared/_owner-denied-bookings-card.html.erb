@@ -13,6 +13,11 @@
                 <h4><%= booking.friend.first_name %> <%= booking.friend.last_name %></h4>
               <% end %>
             </div>
+            <div class="owner-booking-client">
+              <p>Reserved </p>
+              <p>by </p>
+              <p><%= booking.user.first_name %> <%= booking.user.last_name %> </p>
+            </div>
             <div class="booking-date">
                 <div class="start-date">
                   <i class="fas fa-hourglass-start"></i> 
@@ -30,10 +35,18 @@
           </div>
           <div class="owner-booking-buttons">
             <div class="owner-booking-button-accept">
-              <span><%= link_to "Accept", denied_booking_path(booking), method: :patch %></span>
+              <span>
+                <%= link_to accepted_booking_path(booking), method: :patch do %>
+                  <i class="far fa-check-circle"></i>
+                <% end %>
+              </span>
             </div>
             <div class="owner-booking-button-deny">
-              <span><%= link_to "Deny", denied_booking_path(booking), method: :patch %></span>
+              <span>
+                <%= link_to denied_booking_path(booking), method: :patch do %>
+                  <i class="far fa-times-circle"></i>
+                <% end %>
+              </span>
             </div>
           </div>
          </div>

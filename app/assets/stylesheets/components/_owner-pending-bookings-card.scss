@@ -30,12 +30,20 @@
 
 .owner-booking-button-accept {
   margin-right: 5px;
-  
+  span {
+    i {
+      color: green;
+    }
+  }
 }
 
 .owner-booking-button-deny {
   margin-left: 5px;
-
+  span {
+    i {
+      color: red;
+    }
+  }
 }
 
 .owner-booking-info-header {
@@ -50,3 +58,10 @@
   }
 }
 
+.owner-booking-client {
+  display: flex;
+  align-items: center;
+  p {
+    margin-right: 5px;
+  }
+}

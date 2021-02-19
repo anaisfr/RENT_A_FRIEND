@@ -14,7 +14,8 @@ class PagesController < ApplicationController
     # @accepted_bookings = current_user.friends.map {|friend| friend.bookings.where(status: "accepted") }.flatten
     # @denied_bookings = current_user.friends.map {|friend| friend.bookings.where(status: "denied") }.flatten
     @friends = Friend.all
-    @user = User.all
+    @renter_bookings_pending = Booking.where(user: current_user, status: "pending")
+    @renter_bookings_accepted = Booking.where(user: current_user, status: "accepted")
+    @renter_bookings_denied = Booking.where(user: current_user, status: "denied")
   end
-
 end

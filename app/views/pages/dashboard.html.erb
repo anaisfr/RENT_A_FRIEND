@@ -42,14 +42,23 @@
 
         <div class="col-4">
           <h3>Pending request</h3>
+          <% @renter_bookings_pending.each do |booking| %>
+            <%= render 'shared/renter-pending-bookings-card', booking: booking %>
+          <% end %>
         </div>
 
         <div class="col-4">
           <h3>Accepted request</h3>
+          <% @renter_bookings_pending.each do |booking| %>
+            <%= render 'shared/renter-accepted-bookings-card', booking: booking %>
+          <% end %>
         </div>
 
         <div class="col-4">
           <h3>Denied request</h3>
+          <% @renter_bookings_pending.each do |booking| %>
+            <%= render 'shared/renter-denied-bookings-card', booking: booking %>
+          <% end %>
         </div>
       </div>
   </div>

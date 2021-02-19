@@ -6,12 +6,15 @@
     <p><strong>Start date:</strong> <%= booking.start_date.day %> <%= date_formatter(booking.start_date) %> <%= booking.start_date.year %></p>
     <p><strong>End date:</strong> <%= booking.end_date.day %> <%= date_formatter(booking.end_date) %> <%= booking.end_date.year %></p>
   </div>
-
+  <% if booking.status == "pending" %>
   <div class="booking-request-btn">
     <%= link_to "Accept", accepted_booking_path(booking), method: :patch %>
     <%= link_to "Deny", denied_booking_path(booking), method: :patch %>
   </div>
-
+  <% elsif booking.status == "accepted" || booking.status == "denied"  %>
+  <%= link_to "Cancel", canceled_booking_path(booking), method: :patch %>
+  <%= link_to "Archive", archived_booking_path(booking), method: :patch %>
+  <% end %>
 </div>
 
 

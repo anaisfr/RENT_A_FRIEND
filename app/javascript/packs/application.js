@@ -24,12 +24,16 @@ require("channels")
 
 // External imports
 import "bootstrap";
-import "../plugins/flatpickr"
+// import "../plugins/flatpickr"
 import { calendarDate } from '../plugins/date';
+import flatpickr from "flatpickr";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener('turbolinks:load', () => {
   calendarDate();
+  flatpickr(".datepicker", {});
 });
+
+

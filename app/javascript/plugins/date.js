@@ -1,7 +1,7 @@
 const calendarDate = () => {
+  if (document.getElementById("booking_start_date")) {
   const date1 = document.getElementById("booking_start_date");
   const date2 = document.getElementById("booking_end_date");
-
 
 
   date2.addEventListener("change", (event) => {
@@ -23,6 +23,7 @@ const calendarDate = () => {
 
     }
   });
+  }
 };
 
 

@@ -26,18 +26,19 @@
 .owner-booking-buttons {
   display: flex;
   justify-content: center;
+  margin-top: 10px;
 }
 
-.owner-booking-button-accept {
+.owner-booking-button-cancel {
   margin-right: 5px;
   span {
     i {
-      color: green;
+      color: black;
     }
   }
 }
 
-.owner-booking-button-deny {
+.owner-booking-button-archive {
   margin-left: 5px;
   span {
     i {
@@ -65,3 +66,4 @@
     margin-right: 5px;
   }
 }
+

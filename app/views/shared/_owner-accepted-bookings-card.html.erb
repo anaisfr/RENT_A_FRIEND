@@ -34,17 +34,17 @@
             </div>
           </div>
           <div class="owner-booking-buttons">
-            <div class="owner-booking-button-accept">
+            <div class="owner-booking-button-cancel">
               <span>
-                <%= link_to accepted_booking_path(booking), method: :patch do %>
-                  <i class="far fa-check-circle"></i>
+                <%= link_to canceled_booking_path(booking), method: :patch do %>
+                  <i class="fas fa-undo"></i>
                 <% end %>
               </span>
             </div>
-            <div class="owner-booking-button-deny">
+            <div class="owner-booking-button-archive">
               <span>
-                <%= link_to denied_booking_path(booking), method: :patch do %>
-                  <i class="far fa-times-circle"></i>
+                <%= link_to archived_booking_path(booking), method: :patch do %>
+                  <i class="fas fa-archive"></i>
                 <% end %>
               </span>
             </div>

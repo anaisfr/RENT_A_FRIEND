@@ -28,24 +28,22 @@
   justify-content: center;
 }
 
-.owner-booking-button-accept {
+.owner-booking-button-cancel {
   margin-right: 5px;
   span {
     i {
-      color: green;
+      color: black;
     }
   }
-  
 }
 
-.owner-booking-button-deny {
+.owner-booking-button-archive {
   margin-left: 5px;
   span {
     i {
       color: red;
     }
   }
-
 }
 
 .owner-booking-info-header {

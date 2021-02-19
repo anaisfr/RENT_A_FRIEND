@@ -36,6 +36,7 @@ end
 
 friends = []
 30.times do |index|
+  cities = ["Berlin", "London", "Paris", "Madrid", "Barcelona", "Vienna", "Rome", "Naples", "Milan", "Bordeaux", "Lyon", "Marseille"]
   puts "Creating friend n°#{index}"
 file = URI.open("https://source.unsplash.com/400x250/?person,people,portrait")
   friend = Friend.new(
@@ -43,8 +44,8 @@ file = URI.open("https://source.unsplash.com/400x250/?person,people,portrait")
     last_name:    Faker::Name.last_name,
     age: rand(18..75),
     gender: Friend::GENDER.sample,
-    city: Faker::Address.city,
-    price: rand(50..300),
+    city: cities.sample,
+    price: rand(10..300),
     description: Faker::TvShows::Simpsons.quote,
     user: users.sample
   )

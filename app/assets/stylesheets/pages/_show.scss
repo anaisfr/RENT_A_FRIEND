@@ -20,9 +20,8 @@
 
 .show-grid {
   display: grid;
-  background-color: transparent;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 60px;
+  grid-gap: 40px;
   grid-auto-rows: minmax(100px, auto);
   background-color: white;
   padding: 30px 120px;
@@ -80,6 +79,15 @@
   padding: 10px 45px;
   border-radius: 20px;
   display: inline;
+}
+
+.show-friend-reviews {
+  grid-row: 2;
+  grid-column: 1 / span 2;
+  background-color: #00000003;
+  box-shadow: 0 0 15px rgb(230, 230, 230);
+  border-radius: 3px;
+  padding: 10px 20px;
 }
 
 @media(max-width: 992px) {

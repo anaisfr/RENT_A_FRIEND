@@ -5,14 +5,58 @@
   margin-bottom: 10px;
 }
 
-.booking-request-btn a {
-  background-color: #FF2787;
+.fa-check-circle {
+  color: #2ec579 !important;
+  font-size: 30px;
+  &:hover {
+    opacity: 0.5;
+  }
+}
+
+.fa-times-circle {
+  color: #f75858;
+  font-size: 30px;
+  &:hover {
+    opacity: 0.5;
+  }
+}
+
+.fa-undo-alt {
+  color: #000000a6 !important;
+  font-size: 25px;
+  &:hover {
+    opacity: 0.5;
+  }
+}
+
+.fa-archive {
+  color: #000000a6 !important;
+  font-size: 25px;
+  &:hover {
+    opacity: 0.5;
+  }
+}
+
+.pending p {
+  background-color: #eaa031;
   color: #fff;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 200;
-  text-decoration: none;
-  padding: 10px 45px;
-  border-radius: 20px;
+  border-radius: 3px;
+  padding: 5px 10px;
   display: inline;
-  margin-right: 5px;
+}
+
+.accepted p {
+  background-color: #2ec579;
+  color: #fff;
+  border-radius: 3px;
+  padding: 5px 10px;
+  display: inline;
+}
+
+.denied p {
+  background-color: #f75858;
+  color: #fff;
+  border-radius: 3px;
+  padding: 5px 10px;
+  display: inline;
 }

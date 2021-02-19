@@ -8,12 +8,20 @@
   </div>
   <% if booking.status == "pending" %>
   <div class="booking-request-btn">
-    <%= link_to "Accept", accepted_booking_path(booking), method: :patch %>
-    <%= link_to "Deny", denied_booking_path(booking), method: :patch %>
+    <%= link_to accepted_booking_path(booking), method: :patch do %>
+      <i class="fas fa-check-circle"></i>
+    <% end %>
+    <%= link_to denied_booking_path(booking), method: :patch do %>
+      <i class="far fa-times-circle"></i>
+    <% end %>
   </div>
   <% elsif booking.status == "accepted" || booking.status == "denied"  %>
-  <%= link_to "Cancel", canceled_booking_path(booking), method: :patch %>
-  <%= link_to "Archive", archived_booking_path(booking), method: :patch %>
+  <%= link_to canceled_booking_path(booking), method: :patch do %>
+    <i class="fas fa-undo-alt"></i>
+  <% end %>
+  <%= link_to archived_booking_path(booking), method: :patch do %>
+    <i class="fas fa-archive"></i>
+  <% end %>
   <% end %>
 </div>
 
